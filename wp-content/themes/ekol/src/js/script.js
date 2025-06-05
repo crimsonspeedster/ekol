@@ -1,0 +1,13 @@
+import '@js_blocks/langs_switcher';
+import '@js_blocks/ajax_pagination';
+import '@js_blocks/sliders';
+import '@js_blocks/gsap';
+import '@js_blocks/tabs';
+import '@js_blocks/animation';
+import '@js_blocks/logistics-item';
+import '@js_blocks/vacancies-item';
+import '@js_blocks/mega_menu';
+import '@js_blocks/footer-menu';
+import '@js_blocks/advantages';
+import '@js_blocks/cookie_banner';
+import '@js_blocks/lazy-video';

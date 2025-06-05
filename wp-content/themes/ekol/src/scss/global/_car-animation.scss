@@ -1,0 +1,42 @@
+.car-animation {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @media (min-width: 1921px) {
+        display: none !important;
+    }
+
+    @media (max-width: 1199px) {
+        display: none !important;
+    }
+
+    & > svg {
+        overflow: visible;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .basePath {
+        stroke: #EFF0F1;
+    }
+
+    .progressPath {
+        stroke: #06AEEF;
+    }
+
+    .truck {
+        width: 60px;
+        height: 23px;
+
+        @media (max-width: 991px) {
+            width: 40px;
+            height: 16px;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+@import "@scss/vars";
+
+.footer-menu {
+
+    @media (max-width: 767px) {
+        padding-bottom: 12px;
+        border-bottom: 1px solid #F5F5F51A;
+    }
+
+    &.active {
+        @media (max-width: 767px) {
+            .footer-menu__title {
+                color: #06AEEF;
+
+                &::after {
+                    transform: translateY(-50%) rotate(180deg);
+                    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.031 8.53104L12.531 16.031C12.4614 16.1008 12.3787 16.1561 12.2876 16.1938C12.1966 16.2316 12.099 16.251 12.0004 16.251C11.9019 16.251 11.8043 16.2316 11.7132 16.1938C11.6222 16.1561 11.5394 16.1008 11.4698 16.031L3.96979 8.53104C3.82906 8.39031 3.75 8.19944 3.75 8.00042C3.75 7.80139 3.82906 7.61052 3.96979 7.46979C4.11052 7.32906 4.30139 7.25 4.50042 7.25C4.69944 7.25 4.89031 7.32906 5.03104 7.46979L12.0004 14.4401L18.9698 7.46979C19.0395 7.40011 19.1222 7.34483 19.2132 7.30712C19.3043 7.26941 19.4019 7.25 19.5004 7.25C19.599 7.25 19.6965 7.26941 19.7876 7.30712C19.8786 7.34483 19.9614 7.40011 20.031 7.46979C20.1007 7.53947 20.156 7.6222 20.1937 7.71324C20.2314 7.80429 20.2508 7.90187 20.2508 8.00042C20.2508 8.09896 20.2314 8.19654 20.1937 8.28759C20.156 8.37863 20.1007 8.46136 20.031 8.53104Z' fill='%2306AEEF'/%3E%3C/svg%3E%0A");
+                }
+            }
+
+            .footer-menu__list {
+                margin-top: 12px;
+            }
+        }
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 18px;
+        color: #80959D;
+
+        @media (max-width: 1399px) {
+            font-size: 12px;
+            line-height: 130%;
+        }
+        
+        @media (max-width: 767px) {
+            font-size: 18px;
+            line-height: 100%;
+            position: relative;
+            color: #EFF0F1;
+            padding-right: 30px;
+            text-transform: revert;
+            font-family: $font-headers;
+            font-weight: 450;
+        }
+
+        &::after {
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotate(0);
+            width: 24px;
+            height: 24px;
+            content: '';
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.031 8.53104L12.531 16.031C12.4614 16.1008 12.3787 16.1561 12.2876 16.1938C12.1966 16.2316 12.099 16.251 12.0004 16.251C11.9019 16.251 11.8043 16.2316 11.7132 16.1938C11.6222 16.1561 11.5394 16.1008 11.4698 16.031L3.96979 8.53104C3.82906 8.39031 3.75 8.19944 3.75 8.00042C3.75 7.80139 3.82906 7.61052 3.96979 7.46979C4.11052 7.32906 4.30139 7.25 4.50042 7.25C4.69944 7.25 4.89031 7.32906 5.03104 7.46979L12.0004 14.4401L18.9698 7.46979C19.0395 7.40011 19.1222 7.34483 19.2132 7.30712C19.3043 7.26941 19.4019 7.25 19.5004 7.25C19.599 7.25 19.6965 7.26941 19.7876 7.30712C19.8786 7.34483 19.9614 7.40011 20.031 7.46979C20.1007 7.53947 20.156 7.6222 20.1937 7.71324C20.2314 7.80429 20.2508 7.90187 20.2508 8.00042C20.2508 8.09896 20.2314 8.19654 20.1937 8.28759C20.156 8.37863 20.1007 8.46136 20.031 8.53104Z' fill='%23EFF0F1'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            transition: all ease .4s;
+
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
+    }
+
+    &__list {
+        margin-top: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 4px;
+
+        @media (max-width: 1399px) {
+            font-size: 14px;
+            line-height: 130%;
+        }
+
+        @media (max-width: 1199px) {
+            margin-top: 10px;
+        }
+
+        @media (max-width: 767px) {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            margin: 0;
+            position: relative;
+            padding: 0 16px;
+        }
+
+        &::before {
+            display: none;
+            content: '';
+            width: 1px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            border-left: 1px dashed #034E6C;
+
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
+
+        li {
+
+        }
+
+        a {
+            display: block;
+            padding: 4px 0;
+            transition: background-size 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-image: linear-gradient(to bottom, currentColor 0%, currentColor 98%);
+            background-repeat: no-repeat;
+            background-position: left 100%;
+            background-size: 0 1px;
+
+            @media ((hover: hover) and (pointer:fine)) {
+                &:hover {
+                    background-size: 100% 1px;
+                }
+            }
+        }
+    }
+}

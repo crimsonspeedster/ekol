@@ -1,0 +1,133 @@
+@import "@scss/vars";
+
+.our-solution {
+    padding: 140px 0 90px;
+    
+    @media (max-width: 1199px) {
+        padding: 80px 0 60px;
+    }
+
+    &__pretitle {
+        margin: 0 auto;
+
+        @media (max-width: 575px) {
+            margin: 0;
+        }
+    }
+
+    &__title {
+        text-align: center;
+        margin-top: 16px;
+
+        @media (max-width: 575px) {
+            text-align: left;
+        }
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        max-width: 780px;
+        margin: 12px auto 0;
+
+        @media (max-width: 575px) {
+            text-align: left;
+        }
+    }
+
+    &-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 32px;
+
+        @media (max-width: 991px) {
+            margin-top: 24px;
+        }
+    }
+
+    &-tab {
+        padding: 14px;
+        border-bottom: 2px solid #EFF0F1;
+        text-align: center;
+        color: #888A8F;
+        cursor: pointer;
+
+        @media (max-width: 991px) {
+            padding: 11px 10px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        &.active {
+            border-color: #06AEEF;
+            color: #002B3B;
+            cursor: revert;
+        }
+    }
+
+    &-tabs-content {
+        margin-top: 24px;
+
+        @media (max-width: 991px) {
+            margin-top: 16px;
+        }
+    }
+
+    &-tab-content {
+        display: none;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+        align-items: flex-start;
+        background: #EBF3F9;
+        padding: 40px;
+        border-radius: 4px 4px 16px 16px;
+
+        @media (max-width: 991px) {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 16px;
+            padding: 16px;
+        }
+
+        &.active {
+            display: grid;
+        }
+
+        &__left {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            @media (max-width: 991px) {
+                gap: 12px;
+            }
+        }
+
+        &__right {
+            aspect-ratio: 597 / 390;
+            border-radius: 4px 16px 16px 4px;
+            overflow: hidden;
+
+            @media (max-width: 991px) {
+                aspect-ratio: 296 / 280;
+                border-radius: 4px 4px 16px 16px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                display: block;
+            }
+        }
+
+        &__title {
+
+        }
+
+        &__description {
+
+        }
+    }
+}

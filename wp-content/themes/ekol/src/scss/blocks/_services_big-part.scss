@@ -1,0 +1,54 @@
+@import "@scss/vars";
+@import "@scss_blocks/preview-services_big";
+
+.services_big-part {
+    padding: 90px 0;
+
+    @media (max-width: 1199px) {
+        padding: 80px 0;
+    }
+
+    &__pretitle {
+        margin: 0 auto;
+    }
+
+    &__title {
+        text-align: center;
+        margin: 16px auto 0;
+    }
+
+    &__description {
+        text-align: center;
+        margin: 12px auto 0;
+        max-width: 652px;
+        width: 100%;
+        font-size: 18px;
+        line-height: 26px;
+
+        @media (max-width: 991px) {
+            font-size: 16px;
+            line-height: 22px;
+            max-width: 328px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 32px;
+
+        .preview-services_big:nth-child(even) {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 588px);
+            padding: 16px 40px 16px 24px;
+
+            .preview-services_big__left {
+                order: 2;
+            }
+
+            .preview-services_big__img {
+                order: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@import "@scss/vars";
+
+.page-section {
+    padding: 16px 0 180px;
+    
+    @media (max-width: 1023px) {
+        padding-bottom: 160px;
+    }
+
+    &__preview {
+        border-radius: 16px 16px 4px 4px;
+        overflow: hidden;
+        aspect-ratio: 1308 / 387;
+        margin-bottom: 40px;
+
+        @media (max-width: 575px) {
+            aspect-ratio: 328 / 260;
+            margin-bottom: 16px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+    }
+
+    &__pretitle {
+        margin-bottom: 8px;
+    }
+
+    &__content {
+        max-width: 875px;
+
+        a {
+            color: #06AEEF;
+        }
+    }
+}

@@ -1,0 +1,72 @@
+@import "@scss/vars";
+
+.about-service {
+    display: grid;
+    grid-template-columns: minmax(0, max-content) minmax(0, 1fr);
+    gap: 306px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12.5vw !important;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 1199px) {
+        gap: 60px;
+    }
+
+    @media (max-width: 991px) {
+        gap: 30px;
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    @media (max-width: 575px) {
+        margin-bottom: 44.4vw !important;
+    }
+
+    .car-animation {
+        & > svg {
+            top: calc(100% + 57px);
+            left: 50%;
+            width: 100vw;
+            transform: translateX(-50%);
+            aspect-ratio: 1440 / 65;
+
+            @media (max-width: 575px) {
+                aspect-ratio: 361 / 104;
+                top: calc(100% + 28px);
+            }
+        }
+    }
+
+    &__car-animation {
+        &--pc {
+
+        }
+
+        &--mob {
+            display: none !important;
+
+            @media (max-width: 575px) {
+                display: block !important;
+            }
+        }
+    }
+
+    &__pretitle {
+        margin-bottom: 0 !important;
+    }
+
+    &__description {
+        font-size: 24px;
+        line-height: 32px;
+
+        @media (max-width: 1199px) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@import "@scss/vars";
+@import "@scss_blocks/preview-cases";
+
+.cases-part {
+    padding: 0 0 90px;
+    margin-top: 9.72vw;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: 1199px) {
+        padding-bottom: 80px;
+        padding-top: 80px;
+        margin-top: 0;
+    }
+
+    @media (max-width: 575px) {
+        margin-bottom: 44.4vw;
+        padding-bottom: 0;
+    }
+
+    .car-animation {
+        & > svg {
+            top: -80px;
+            aspect-ratio: 1440 / 125;
+
+            @media (max-width: 575px) {
+                top: calc(100% + 61px);
+                aspect-ratio: 360 / 59;
+            }
+        }
+    }
+
+    &__car-animation {
+        &--pc {
+
+        }
+
+        &--mob {
+            display: none !important;
+
+            @media (max-width: 575px) {
+                display: block !important;
+            }
+        }
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: minmax(0, 730px) minmax(0, max-content);
+        gap: 60px;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @media (max-width: 767px) {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
+        }
+
+        .cases-part__button {
+            display: flex;
+
+            @media (max-width: 575px) {
+                display: none;
+            }
+        }
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    &__pretitle {
+
+    }
+
+    &__title {
+        margin-top: 16px;
+    }
+
+    &__description {
+        margin-top: 8px;
+        font-size: 18px;
+        line-height: 26px;
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    &__button {
+        display: none;
+
+        @media (max-width: 575px) {
+            display: flex;
+            width: calc(100% - 32px);
+            margin: 40px auto 0;
+        }
+    }
+
+    &-slider {
+        margin-top: 32px;
+
+        @media (max-width: 575px) {
+            width: calc(100% - 32px);
+            margin: 24px auto 0;
+        }
+
+        .swiper-wrapper {
+            @media (max-width: 575px) {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        &__scrollbar {
+            margin-top: 32px;
+
+            @media (max-width: 575px) {
+                display: none !important;
+            }
+        }
+    }
+
+    &__slide {
+
+    }
+}

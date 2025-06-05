@@ -1,0 +1,99 @@
+@import "@scss_blocks/section-case";
+@import "@scss_blocks/part-more";
+@import "@scss_blocks/case-company";
+
+.article-case {
+    padding: 16px 0 180px;
+
+    @media (max-width: 1199px) {
+        padding: 6px 0 160px;
+    }
+}
+
+.case__description {
+    margin: 120px auto 0;
+    width: 100%;
+    max-width: 852px;
+
+    @media (max-width: 1199px) {
+        margin-top: 80px;
+    }
+
+    @media (max-width: 991px) {
+        margin-top: 40px;
+        padding: 0 16px;
+    }
+
+    .pretitle {
+        margin-bottom: 8px;
+
+        &:not(:first-child) {
+            margin-top: 120px;
+
+            @media (max-width: 1199px) {
+                margin-top: 60px;
+            }
+        }
+    }
+
+    h2,
+    .h2 {
+        margin-bottom: 16px !important;
+
+        @media (max-width: 1199px) {
+            margin-bottom: 8px !important;
+        }
+    }
+
+    .wp-block-group__inner-container {
+        padding-left: 38px;
+
+        ol {
+            margin-top: 0;
+            margin-bottom: 8px;
+            padding: 0;
+
+            li {
+                margin-bottom: 0;
+                font-size: 24px;
+                line-height: 32px;
+                font-family: $font-headers;
+                font-weight: 450;
+                color: #002B3B;
+
+                @media (max-width: 1023px) {
+                    font-size: 20px;
+                    line-height: 130%;
+                }
+            }
+        }
+    }
+
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        margin-bottom: 8px !important;
+    }
+
+    p + ul {
+        margin-top: -24px;
+
+        @media (max-width: 1199px) {
+            margin-top: -8px;
+        }
+    }
+
+    ul {
+        margin-top: 0;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 0 !important;
+    }
+}

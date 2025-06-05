@@ -1,0 +1,339 @@
+<?php
+
+if( function_exists('acf_add_local_field_group') ) {
+    acf_add_local_field_group(array(
+        'key' => 'acf_theme_settings',
+        'title' => 'Theme settings',
+        'fields' => [
+            [
+                'key' => 'acf_theme_settings-tab-common',
+                'label' => 'Common',
+                'type' => 'tab',
+                'placement' => 'top',
+            ],
+            [
+                'key' => 'acf_theme_settings_common-header_logo',
+                'name' => 'common__header_logo',
+                'label' => 'Header logo',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings_common-header_logo--light',
+                'name' => 'common__header_logo_light',
+                'label' => 'Header logo (light)',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings_common-header_button',
+                'name' => 'common__header_button',
+                'label' => 'Header button',
+                'type' => 'link',
+                'return_format' => 'array',
+                'required' => 0,
+            ],
+            [
+                'key' => 'acf_theme_settings_common-error_video',
+                'name' => 'common__error_video',
+                'label' => 'Video',
+                'type' => 'file',
+                'return_format' => 'url',
+                'required' => 1,
+                'mime_types' => 'mp4,webm,ogg',
+            ],
+            [
+                'key' => 'acf_theme_settings_common-archive--vacancies',
+                'label' => 'Vacancies page',
+                'name' => 'common__archive_vacancies',
+                'type' => 'post_object',
+                'post_type' => ['page'],
+                'multiple' => false,
+                'return_format' => 'object',
+                'required' => 0,
+                'allow_null' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings_common-archive--cases',
+                'label' => 'Cases page',
+                'name' => 'common__archive_cases',
+                'type' => 'post_object',
+                'post_type' => ['page'],
+                'multiple' => false,
+                'return_format' => 'id',
+                'required' => 0,
+                'allow_null' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings_common-archive--solutions',
+                'label' => 'Solutions page',
+                'name' => 'common__archive_solutions',
+                'type' => 'post_object',
+                'post_type' => ['page'],
+                'multiple' => false,
+                'return_format' => 'id',
+                'required' => 0,
+                'allow_null' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings_common-archive--services',
+                'label' => 'Services page',
+                'name' => 'common__archive_services',
+                'type' => 'post_object',
+                'post_type' => ['page'],
+                'multiple' => false,
+                'return_format' => 'id',
+                'required' => 0,
+                'allow_null' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings-tab-form',
+                'label' => 'Form',
+                'type' => 'tab',
+                'placement' => 'top',
+            ],
+            [
+                'key' => 'acf_theme_settings-form_condition',
+                'label' => 'Enable block?',
+                'name' => 'form__condition',
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings-form_pretitle',
+                'name' => 'form__pretitle',
+                'label' => 'Pretitle',
+                'type' => 'text',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-form_condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'acf_theme_settings-form_title',
+                'name' => 'form__title',
+                'label' => 'Title',
+                'type' => 'text',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-form_condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'acf_theme_settings-form_description',
+                'name' => 'form__description',
+                'label' => 'Description',
+                'type' => 'wysiwyg',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-form_condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'acf_theme_settings-form_image_form',
+                'name' => 'form__image_form',
+                'label' => 'Image for block Form',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-form_condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'part-about_tab-about',
+                'label' => 'About',
+                'type' => 'tab',
+            ],
+            [
+                'key' => 'part-about_about-condition',
+                'label' => 'Enable block?',
+                'name' => 'part_about__condition',
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+            ],
+            [
+                'key' => 'part-about_about-pretitle',
+                'name' => 'part_about__pretitle',
+                'label' => 'Pretitle',
+                'type' => 'text',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'part-about_about-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'part-about_about-title',
+                'name' => 'part_about__title',
+                'label' => 'Title',
+                'type' => 'text',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'part-about_about-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'part-about_about-description',
+                'name' => 'part_about__description',
+                'label' => 'Description',
+                'type' => 'wysiwyg',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'part-about_about-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'part-about_about-link',
+                'name' => 'part_about__link',
+                'label' => 'Link',
+                'type' => 'link',
+                'return_format' => 'array',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'part-about_about-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'part-about_about-image',
+                'name' => 'part_about__image',
+                'label' => 'Background',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'part-about_about-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'part-about_about-repeater',
+                'label' => 'Repeater',
+                'name' => 'part_about__repeater',
+                'type' => 'repeater',
+                'required' => 0,
+                'layout' => 'table',
+                'min' => 1,
+                'max' => 0,
+                'sub_fields' => [
+                    [
+                        'key' => 'part-about_about-repeater-title',
+                        'name' => 'title',
+                        'label' => 'Title',
+                        'type' => 'text',
+                        'required' => 1,
+                    ],
+                    [
+                        'key' => 'part-about_about-repeater-number',
+                        'name' => 'number',
+                        'label' => 'Number',
+                        'type' => 'number',
+                        'required' => 1,
+                        'min' => 1,
+                    ],
+                    [
+                        'key' => 'part-about_about-repeater-description',
+                        'name' => 'description',
+                        'label' => 'Description',
+                        'type' => 'textarea',
+                        'new_lines' => 'br',
+                        'required' => 1,
+                    ],
+                    [
+                        'key' => 'part-about_about-repeater-select',
+                        'label' => 'Type',
+                        'name' => 'type',
+                        'type' => 'select',
+                        'choices' => [],
+                        'allow_null' => 0,
+                        'multiple' => 0,
+                        'required' => 1,
+                        'ui' => 1,
+                        'return_format' => 'value',
+                        'ajax' => 0,
+                    ],
+                ],
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'part-about_about-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+        ],
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'theme-general-settings',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'active' => true,
+    ));
+}

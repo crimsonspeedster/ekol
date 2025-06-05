@@ -1,0 +1,81 @@
+@import "@scss/vars";
+
+.preview-solutions {
+    background-color: #F5F5F5;
+    position: relative;
+    padding: 32px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 0 13px 0 #031E3312;
+    border-radius: 16px 16px 4px 4px;
+    height: 100%;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        content: '';
+        background: linear-gradient(90deg, #06AEEF 0%, #A4ECE2 100%);
+        z-index: 1;
+        border-radius: 16px 16px 0 0;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 272 / 280;
+        overflow: hidden;
+
+        @media ((hover: hover) and (pointer:fine)) {
+            &:hover {
+                .img--default {
+                    display: none;
+                }
+
+                .img--hover {
+                    display: block;
+                }
+            }
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+
+            &--default {
+                display: block;
+            }
+
+            &--hover {
+                display: none;
+            }
+        }
+    }
+
+    &__body {
+        margin-top: -8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    &__title {
+        display: block;
+    }
+
+    &__content {
+
+    }
+
+    &__button {
+        margin-top: auto;
+        align-self: flex-start;
+    }
+}

@@ -1,0 +1,109 @@
+@import "@scss/vars";
+
+.cookie-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+
+    &__backdrop {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &__block {
+        position: absolute;
+        bottom: 15px;
+        right: 60px;
+        z-index: 2;
+        padding: 24px;
+        background: #fff;
+        box-shadow: 0 0 13px 0 #031E3312;
+        border-radius: 16px;
+        overflow: hidden;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+
+        @media (max-width: 575px) {
+            right: 15px;
+        }
+
+        @media (max-width: 359px) {
+            max-width: calc(100% - 32px);
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        z-index: 1;
+        top: 16px;
+        right: 16px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    &__image {
+        width: 96px;
+        aspect-ratio: 1;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+    }
+
+    &__title {
+        margin-top: 24px;
+        font-family: $font-headers;
+        font-weight: 450;
+        font-size: 18px;
+        line-height: 24px;
+        color: #170F49;
+    }
+
+    &__text {
+        color: #6F6C90;
+        margin-top: 8px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+        gap: 8px;
+    }
+
+    &__button {
+        width: 100%;
+        cursor: pointer;
+
+        &--primary {
+
+        }
+
+        &--cancel {
+            padding: 4px;
+            color: #023D54;
+            font-family: $font-headers;
+            font-weight: 450;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}

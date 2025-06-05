@@ -1,0 +1,90 @@
+@import "@scss/vars";
+
+.mega-menu {
+    display: none;
+    background-color: #EBF3F9;
+    padding: 56px 60px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+    left: 0;
+    top: 100%;
+
+    &.active {
+        display: block;
+    }
+
+    & > .container {
+        display: grid;
+        grid-template-columns: minmax(0, 412px) minmax(0, 1fr);
+        gap: 32px;
+        align-items: flex-start;
+    }
+
+    &__left {
+
+    }
+
+    &__right {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    &__title {
+
+    }
+
+    &__description {
+        margin-top: 8px;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    &__link {
+        margin-top: 32px;
+    }
+
+    &-item {
+        display: block;
+        padding: 20px;
+        box-shadow: 0 0 13px 0 #031E3312;
+        background: #fff;
+        border-radius: 16px 16px 4px 4px;
+        overflow: hidden;
+
+        @media (hover: hover) and (pointer:fine) {
+            &:hover {
+                .mega-menu-item__title {
+                    color: #06AEEF;
+                }
+
+                .mega-menu-item__button {
+                    color: #059DD7;
+
+                    path {
+                        fill: #059DD7;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            color: #002B3B;
+            font-family: $font-headers;
+            font-weight: 450;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        &__description {
+            margin-top: 8px;
+        }
+
+        &__button {
+            margin-top: 16px;
+        }
+    }
+}

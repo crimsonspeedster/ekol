@@ -1,0 +1,147 @@
+@import "@scss/vars";
+
+.timeline {
+    background: #EBF3F9;
+    padding: 180px 0 140px;
+
+    @media (max-width: 991px) {
+        padding: 80px 0 86px;
+    }
+
+    &__pretitle {
+        margin: 0 auto;
+        border-radius: 2px;
+        background-color: #fff;
+    }
+
+    &__title {
+        margin-top: 16px;
+        text-align: center;
+    }
+
+    &__description {
+        max-width: 780px;
+        width: 100%;
+        font-size: 18px;
+        line-height: 26px;
+        margin: 12px auto 0;
+        text-align: center;
+
+        @media (max-width: 991px) {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        position: relative;
+        z-index: 1;
+        padding-top: 100px;
+
+        @media (max-width: 991px) {
+            padding-left: 39px;
+            gap: 32px;
+            padding-top: 24px;
+        }
+    }
+
+    &-scroll {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 23px;
+        height: 100%;
+        overflow: visible;
+
+        @media (max-width: 991px) {
+            left: 0;
+            transform: unset;
+            top: 0;
+            overflow: hidden;
+        }
+
+        & > svg {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 23 / 1826;
+            overflow: visible;
+        }
+    }
+
+    &-item {
+        width: 100%;
+        max-width: 600px;
+        align-self: flex-start;
+
+        @media (max-width: 1399px) {
+            max-width: 450px;
+        }
+        
+        @media (max-width: 1199px) {
+            max-width: 350px;
+        }
+
+        @media (max-width: 991px) {
+            max-width: 100%;
+        }
+
+        &.reverse {
+            align-self: flex-end;
+        }
+
+        &__pretitle {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            width: max-content;
+            padding: 6px 12px;
+            background: #06AEEF;
+            border-radius: 2px;
+            color: #FFFFFF;
+            font-family: $font-third;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+
+            @media (max-width: 991px) {
+                font-size: 12px;
+                line-height: 16px;
+                padding: 4px 12px;
+            }
+
+            &::before {
+                content: '';
+                min-width: 8px;
+                width: 8px;
+                height: 8px;
+                background: #fff;
+                border-radius: 1px;
+            }
+        }
+
+        &__title {
+            margin-top: 16px;
+
+            @media (max-width: 991px) {
+                margin-top: 8px;
+            }
+        }
+
+        &__description {
+            margin-top: 12px;
+            font-size: 18px;
+            line-height: 26px;
+
+            @media (max-width: 991px) {
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import "@scss_blocks/hero-block";
+@import "@scss_blocks/part-more";
+
+.single-solutions-section {
+    padding: 90px 0 180px;
+    
+    @media (max-width: 1199px) {
+        padding: 80px 0 160px;
+    }
+
+    &__content {
+
+    }
+}
