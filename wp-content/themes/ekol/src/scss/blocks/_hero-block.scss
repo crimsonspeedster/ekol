@@ -104,12 +104,13 @@ body.single {
             overflow: hidden;
             color: inherit;
 
-            @media (max-width: 991px) {
-                -webkit-line-clamp: 2;
+            @media (max-width: 767px) {
+                -webkit-line-clamp: 4;
             }
 
-            @media (max-width: 767px) {
-                -webkit-line-clamp: 3;
+            @media (max-width: 575px) {
+                font-size: 28px;
+                line-height: 120%;
             }
         }
 
@@ -137,6 +138,21 @@ body.single {
             object-fit: cover;
             object-position: center;
             display: block;
+
+            &:first-child {
+
+                @media (max-width: 575px) {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                display: none;
+
+                @media (max-width: 575px) {
+                    display: block;
+                }
+            }
         }
     }
 

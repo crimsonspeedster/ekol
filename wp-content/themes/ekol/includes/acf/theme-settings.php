@@ -263,6 +263,23 @@ if( function_exists('acf_add_local_field_group') ) {
                 ),
             ],
             [
+                'key' => 'part-about_about-image--mob',
+                'name' => 'part_about__image_mob',
+                'label' => 'Background (mob)',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'part-about_about-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
                 'key' => 'part-about_about-repeater',
                 'label' => 'Repeater',
                 'name' => 'part_about__repeater',

@@ -68,9 +68,14 @@
     &__title {
         color: inherit;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @media (max-width: 575px) {
+            font-size: 28px;
+            line-height: 120%;
+        }
     }
 
     &__description {

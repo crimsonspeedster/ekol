@@ -131,6 +131,21 @@
             object-fit: cover;
             object-position: center;
             display: block;
+
+            &:first-child {
+
+                @media (max-width: 575px) {
+                    display: none;
+                }
+            }
+
+            &:last-child {
+                display: none;
+
+                @media (max-width: 575px) {
+                    display: block;
+                }
+            }
         }
     }
 
@@ -169,6 +184,8 @@
             @media (max-width: 767px) {
                 min-width: 120px;
                 width: 120px;
+                font-size: 42px;
+                padding-left: 12px;
             }
         }
 
@@ -202,6 +219,9 @@
             line-height: 18px;
 
             @media (max-width: 767px) {
+                font-size: 16px;
+                line-height: 20px;
+
                 br {
                     display: none;
                 }

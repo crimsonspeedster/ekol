@@ -37,7 +37,11 @@ if (!empty($hero__repeater)) {
                                             ?>
                                         </div>
 
-                                        <?= wp_get_attachment_image($item['image_id'], 'full'); ?>
+                                        <?php
+                                            echo wp_get_attachment_image($item['image_id'], 'full');
+
+                                            echo wp_get_attachment_image($item['image_id_mob'] ?: $item['image_id'] , 'full');
+                                        ?>
                                     </div>
                                 </div>
                                 <?php

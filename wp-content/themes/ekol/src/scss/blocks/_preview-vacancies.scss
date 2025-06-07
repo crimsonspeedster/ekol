@@ -2,7 +2,7 @@
 
 .preview-vacancies {
     position: relative;
-    border-radius: 0 0 16px 16px;
+    border-radius: 16px;
     padding: 36px 96px 24px 24px;
     box-shadow: 0 0 13px 0 #031E3312;
     border: 1px solid #EFF0F1;
@@ -73,6 +73,10 @@
 
     &__content {
 
+        *:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
         &--mini {
             margin-top: 8px;
         }
@@ -81,6 +85,10 @@
             max-height: 0;
             transition: all .4s ease;
             overflow: hidden;
+
+            & > *:first-child {
+                padding-top: 8px;
+            }
         }
     }
 

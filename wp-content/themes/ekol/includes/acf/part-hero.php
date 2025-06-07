@@ -31,6 +31,14 @@ if( function_exists('acf_add_local_field_group') ):
                         'required' => 1,
                     ],
                     [
+                        'key' => 'part-hero-repeater_image--mob',
+                        'name' => 'image_id_mob',
+                        'label' => 'Image',
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'required' => 0,
+                    ],
+                    [
                         'key' => 'part-hero-repeater_title',
                         'name' => 'title',
                         'label' => 'Title',

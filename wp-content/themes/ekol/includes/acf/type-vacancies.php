@@ -41,14 +41,6 @@ if( function_exists('acf_add_local_field_group') ):
                 'type' => 'wysiwyg',
                 'required' => 1,
             ],
-            [
-                'key' => 'type-vacancies_common-link',
-                'name' => 'common__link',
-                'label' => 'Link',
-                'type' => 'link',
-                'return_format' => 'array',
-                'required' => 0,
-            ],
         ],
         'location' => array(
             array(

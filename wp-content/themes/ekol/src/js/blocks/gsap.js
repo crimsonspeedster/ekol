@@ -82,9 +82,11 @@ document.querySelectorAll('[data-number]').forEach(item => {
     const isFloat = !Number.isInteger(endVal);
     const obj = { val: 0 };
 
+    const duration = endVal <= 10 ? 1 : 4;
+
     gsap.to(obj, {
         val: endVal,
-        duration: 4,
+        duration,
         ease: "sine.inOut",
         scrollTrigger: {
             trigger: item,

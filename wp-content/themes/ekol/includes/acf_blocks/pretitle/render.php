@@ -9,6 +9,6 @@ if ($is_preview) {
 }
 else {
     ?>
-    <p <?= get_block_wrapper_attributes(['class' => 'pretitle', 'data-aos' => 'fade-up']); ?>><?= $pretitle__text; ?></p>
+    <p <?= get_block_wrapper_attributes(['class' => 'pretitle']); ?>><?= $pretitle__text; ?></p>
     <?php
 }

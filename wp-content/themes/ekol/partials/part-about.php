@@ -5,6 +5,7 @@ $part_about__title = get_field('part_about__title', 'option');
 $part_about__description = get_field('part_about__description', 'option');
 $part_about__link = get_field('part_about__link', 'option');
 $part_about__image = get_field('part_about__image', 'option');
+$part_about__image_mob = get_field('part_about__image_mob', 'option');
 $part_about__repeater = get_field('part_about__repeater', 'option');
 
 if ($part_about__condition) {
@@ -55,7 +56,11 @@ if ($part_about__condition) {
             </div>
 
             <div class="part-about__image" data-aos="fade-up">
-                <?php echo wp_get_attachment_image($part_about__image, 'full'); ?>
+                <?php
+                    echo wp_get_attachment_image($part_about__image, 'full');
+
+                    echo wp_get_attachment_image($part_about__image_mob, 'full');
+                ?>
             </div>
 
             <?php
