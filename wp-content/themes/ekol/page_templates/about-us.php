@@ -300,7 +300,13 @@ $reviews__repeater = get_field('reviews__repeater');
                     </div>
                 </div>
 
-                <div class="swiper-scrollbar our-team__scrollbar"></div>
+                <div class="swiper-bottom-part our-team__bottom">
+                    <div class="swiper-button-prev"></div>
+
+                    <div class="swiper-scrollbar our-team__scrollbar"></div>
+
+                    <div class="swiper-button-next"></div>
+                </div>
                 <?php
             }
         ?>
@@ -321,7 +327,7 @@ $reviews__repeater = get_field('reviews__repeater');
 
                 <div class="h4 reviews__number">01</div>
 
-                <div class="reviews__buttons">
+                <div class="reviews__buttons swiper-buttons--white">
                     <div class="swiper-button-prev"></div>
 
                     <div class="swiper-button-next"></div>

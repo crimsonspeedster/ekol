@@ -23,15 +23,28 @@
         <div class="container">
             <?php
                 if ($common__header_logo) {
-                    ?>
-                    <a href="<?= get_home_url(); ?>" class="header__logo">
-                        <?php
-                            echo wp_get_attachment_image($common__header_logo, 'full', null, ['class' => 'header__image header__image--default']);
-
-                            echo wp_get_attachment_image($common__header_logo_light, 'full', null, ['class' => 'header__image header__image--light']);
+                    if (is_front_page()) {
                         ?>
-                    </a>
-                    <?php
+                        <div class="header__logo">
+                            <?php
+                                echo wp_get_attachment_image($common__header_logo, 'full', null, ['class' => 'header__image header__image--default']);
+
+                                echo wp_get_attachment_image($common__header_logo_light, 'full', null, ['class' => 'header__image header__image--light']);
+                            ?>
+                        </div>
+                        <?php
+                    }
+                    else {
+                        ?>
+                        <a href="<?= get_home_url(); ?>" class="header__logo">
+                            <?php
+                                echo wp_get_attachment_image($common__header_logo, 'full', null, ['class' => 'header__image header__image--default']);
+
+                                echo wp_get_attachment_image($common__header_logo_light, 'full', null, ['class' => 'header__image header__image--light']);
+                            ?>
+                        </a>
+                        <?php
+                    }
                 }
 
                 if (has_nav_menu('header-menu')) {

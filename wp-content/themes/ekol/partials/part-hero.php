@@ -38,9 +38,9 @@ if (!empty($hero__repeater)) {
                                         </div>
 
                                         <?php
-                                            echo wp_get_attachment_image($item['image_id'], 'full');
+                                            echo wp_get_attachment_image($item['image_id'], 'full', null, ['class' => 'hero-block-item__image hero-block-item__image--pc']);
 
-                                            echo wp_get_attachment_image($item['image_id_mob'] ?: $item['image_id'] , 'full');
+                                            echo wp_get_attachment_image($item['image_id_mob'] ?: $item['image_id'] , 'full', null, ['class' => 'hero-block-item__image hero-block-item__image--mob']);
                                         ?>
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@ if (!empty($hero__repeater)) {
                 <?php
                     if (count($hero__repeater) > 1) {
                         ?>
-                        <div class="hero-block-slider__navigation">
+                        <div class="hero-block-slider__navigation swiper-buttons--white">
                             <div class="swiper-button-prev"></div>
 
                             <div class="swiper-button-next"></div>

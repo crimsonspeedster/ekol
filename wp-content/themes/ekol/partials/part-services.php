@@ -109,7 +109,13 @@ if ($services__condition) {
                         ?>
                     </div>
 
-                    <div class="swiper-scrollbar services-part-slider__scrollbar"></div>
+                    <div class="swiper-bottom-part services-part-slider__bottom">
+                        <div class="swiper-button-prev"></div>
+
+                        <div class="swiper-scrollbar services-part-slider__scrollbar"></div>
+
+                        <div class="swiper-button-next"></div>
+                    </div>
                 </div>
                 <?php
             }

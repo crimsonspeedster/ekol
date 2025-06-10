@@ -65,12 +65,8 @@
     &-slider {
         margin-top: 32px;
 
-        &__scrollbar {
+        &__bottom {
             margin-top: 32px;
-
-            @media (max-width: 575px) {
-                display: none !important;
-            }
         }
     }
 

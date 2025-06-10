@@ -20,7 +20,7 @@ $page_for_posts_id = get_field( 'common__archive_cases', 'option' );
 
     <?php
         get_template_part('partials/part-more', '', [
-            'title' => pll__('Кейси наших клієнтів'),
+            'title' => pll__('Наші спільні кейси'),
             'description' => pll__('Наші рішення допомогли багатьом компаніям покращити складські процеси'),
             'tag' => pll__('Наші кейси'),
             'button' => [

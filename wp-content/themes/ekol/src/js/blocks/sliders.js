@@ -94,7 +94,7 @@ document.querySelectorAll('.vacancies-part-slider').forEach(item => {
     const parent_el = item.closest('.vacancies-part');
 
     new Swiper(item, {
-        modules: [Scrollbar],
+        modules: [Scrollbar, Navigation],
         centeredSlides: true,
         autoHeight: true,
         initialSlide: 1,
@@ -102,6 +102,10 @@ document.querySelectorAll('.vacancies-part-slider').forEach(item => {
         scrollbar: {
             el: parent_el.querySelector('.swiper-scrollbar'),
             hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
         },
         breakpoints: {
             0: {
@@ -124,7 +128,7 @@ document.querySelectorAll('.blog-part-slider').forEach(item => {
     const parent_el = item.closest('.blog-part');
 
     new Swiper(item, {
-        modules: [Scrollbar],
+        modules: [Scrollbar, Navigation],
         slidesPerView: 1.089,
         spaceBetween: 8,
         autoHeight: true,
@@ -133,6 +137,10 @@ document.querySelectorAll('.blog-part-slider').forEach(item => {
         scrollbar: {
             el: parent_el.querySelector('.swiper-scrollbar'),
             hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
         },
         breakpoints: {
             576: {
@@ -164,13 +172,17 @@ document.querySelectorAll('.cases-part-slider').forEach(item => {
     const parent_el = item.closest('.cases-part');
 
     new Swiper(item, {
-        modules: [Scrollbar],
+        modules: [Scrollbar, Navigation],
         enabled: true,
         init: true,
         spaceBetween: 20,
         scrollbar: {
             el: parent_el.querySelector('.swiper-scrollbar'),
             hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
         },
         breakpoints: {
             0: {
@@ -213,7 +225,7 @@ document.querySelectorAll('.services-part-slider').forEach(item => {
     const parent_el = item.closest('.services-part');
 
     new Swiper(item, {
-        modules: [Scrollbar],
+        modules: [Scrollbar, Navigation],
         slidesOffsetBefore: 16,
         slidesOffsetAfter: 16,
         spaceBetween: 8,
@@ -222,6 +234,10 @@ document.querySelectorAll('.services-part-slider').forEach(item => {
         scrollbar: {
             el: parent_el.querySelector('.swiper-scrollbar'),
             hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
         },
         breakpoints: {
             576: {
@@ -251,12 +267,23 @@ document.querySelectorAll('.services-part-slider').forEach(item => {
 });
 
 document.querySelectorAll('.solutions-part-slider').forEach(item => {
+    const parent_el = item.closest('.solutions-part');
+
     new Swiper(item, {
+        modules: [Scrollbar, Navigation],
         autoHeight: true,
         spaceBetween: 8,
         slidesOffsetBefore: 16,
         slidesOffsetAfter: 16,
         slidesPerView: 1.31,
+        scrollbar: {
+            el: parent_el.querySelector('.swiper-scrollbar'),
+            hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
+        },
         breakpoints: {
             576: {
                 slidesPerView: 2.2,
@@ -420,7 +447,7 @@ document.querySelectorAll('.our-team__slider').forEach(item => {
     const parent_el = item.closest('.our-team');
 
     new Swiper(item, {
-        modules: [Scrollbar],
+        modules: [Scrollbar, Navigation],
         autoHeight: true,
         spaceBetween: 16,
         slidesOffsetBefore: 16,
@@ -434,6 +461,10 @@ document.querySelectorAll('.our-team__slider').forEach(item => {
         scrollbar: {
             el: parent_el.querySelector('.swiper-scrollbar'),
             hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
         },
     });
 });

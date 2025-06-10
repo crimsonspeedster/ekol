@@ -48,7 +48,6 @@
         }
     }
 
-    &__scrollbar,
     &__slider {
         display: none !important;
 
@@ -65,8 +64,13 @@
 
     }
 
-    &__scrollbar {
+    &__bottom {
+        display: none;
         margin-top: 16px;
+
+        @media (max-width: 767px) {
+            display: flex;
+        }
     }
 
     &-item {

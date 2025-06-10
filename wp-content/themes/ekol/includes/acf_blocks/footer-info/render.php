@@ -17,9 +17,22 @@ else {
 
     ?>
     <div <?= get_block_wrapper_attributes(['class' => 'footer-info']); ?>>
-        <a class="footer-info__logo" href="<?= get_home_url(); ?>">
-            <?php echo wp_get_attachment_image($footer_info__image, 'full'); ?>
-        </a>
+        <?php
+            if (is_front_page()) {
+                ?>
+                <div class="footer-info__logo">
+                    <?php echo wp_get_attachment_image($footer_info__image, 'full'); ?>
+                </div>
+                <?php
+            }
+            else {
+                ?>
+                <a class="footer-info__logo" href="<?= get_home_url(); ?>">
+                    <?php echo wp_get_attachment_image($footer_info__image, 'full'); ?>
+                </a>
+                <?php
+            }
+        ?>
 
         <?php
             if ($footer_info__title) {

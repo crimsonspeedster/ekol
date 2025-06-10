@@ -8,7 +8,7 @@ if (function_exists('pll_register_string')) {
     pll_register_string('ekol', 'Послуга');
     pll_register_string('ekol', 'Кейси');
     pll_register_string('ekol', 'Кейс');
-    pll_register_string('ekol', 'Кейси наших клієнтів');
+    pll_register_string('ekol', 'Наші спільні кейси');
     pll_register_string('ekol', 'неповна зайнятість');
     pll_register_string('ekol', 'повна зайнятість');
     pll_register_string('ekol', 'опубліковано %s1');

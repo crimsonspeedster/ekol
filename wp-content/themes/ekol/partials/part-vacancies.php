@@ -71,7 +71,13 @@ if ($vacancies__condition) {
                     </div>
                 </div>
 
-                <div class="swiper-scrollbar vacancies-part-slider__scrollbar"></div>
+                <div class="swiper-bottom-part vacancies-part-slider__bottom">
+                    <div class="swiper-button-prev"></div>
+
+                    <div class="swiper-scrollbar vacancies-part-slider__scrollbar"></div>
+
+                    <div class="swiper-button-next"></div>
+                </div>
                 <?php
             }
         ?>

@@ -83,6 +83,15 @@ body.page-template-home {
         @media (max-width: 767px) {
             margin-top: 24px;
         }
+
+        &__bottom {
+            display: none;
+            margin-top: 32px;
+
+            @media (max-width: 767px) {
+                display: flex;
+            }
+        }
     }
 
     &__slide {

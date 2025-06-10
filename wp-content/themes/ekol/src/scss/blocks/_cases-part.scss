@@ -115,12 +115,8 @@
             }
         }
 
-        &__scrollbar {
+        &__bottom {
             margin-top: 32px;
-
-            @media (max-width: 575px) {
-                display: none !important;
-            }
         }
     }
 

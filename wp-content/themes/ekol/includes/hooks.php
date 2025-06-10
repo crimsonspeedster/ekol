@@ -296,6 +296,147 @@ add_action('wp_footer', function () {
     </script>
     <?php
 });
+add_action('wp_head', function () {
+    ?>
+    <meta name="google-site-verification" content="wmH_V31whVizBSBq6XkGi6JfjEeamq1V918LllVpPpY" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5VT4PP9X');</script>
+    <!-- End Google Tag Manager -->
+    <?php
+});
+add_action('wp_body_open', function () {
+    ?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VT4PP9X"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <?php
+});
+add_action('wpseo_head', function () {
+    $current_lang = get_permalink();
+
+    if (is_home() && get_queried_object_id() === (int) get_option('page_for_posts')) {
+        $current_lang = get_permalink(get_option('page_for_posts'));
+    }
+
+    echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($current_lang) . '" />' . "\n";
+});
+add_action('wp_head', function () {
+    $common__header_logo = get_field('common__header_logo', 'option');
+
+    if (is_singular('post')) {
+        $post_title = get_the_title();
+        $post_url = get_permalink();
+        $post_date = get_the_date('c');
+        $post_modified_date = get_the_modified_date('c');
+        $post_excerpt = get_the_excerpt();
+        $post_content = get_the_content();
+        $post_image = get_the_post_thumbnail_url();
+
+        $author_id = get_the_author_meta( 'ID' );
+        $author_info = get_userdata( $author_id );
+        $author_output = $author_info->first_name && $author_info->last_name ? $author_info->first_name . ' ' . $author_info->last_name : $author_info->display_name;
+
+        $blog_posting_schema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'BlogPosting',
+            'mainEntityOfPage' => [
+                '@type' => 'WebPage',
+                '@id' => $post_url
+            ],
+            'headline' => $post_title,
+            'description' => $post_excerpt,
+            'articleBody' => wp_strip_all_tags($post_content),
+            'author' => [
+                '@type' => 'Person',
+                'name' => $author_output
+            ],
+            'datePublished' => $post_date,
+            'dateModified' => $post_modified_date,
+            'image' => $post_image,
+            'publisher' => [
+                '@type' => 'Organization',
+                'name' => get_bloginfo('name'),
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    'url' => wp_get_attachment_image_url($common__header_logo, 'full'),
+                ]
+            ]
+        ];
+
+        echo '<script type="application/ld+json">' . json_encode($blog_posting_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+    }
+    elseif (is_page_template('page_templates/about-us.php')) {
+        $contacts__address = get_field('contacts__address', 'option');
+        $contacts__phones = get_field('contacts__phones', 'option');
+        $contacts__email = get_field('contacts__email', 'option');
+
+        $posting_schema = [
+            '@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'url' => get_home_url(),
+            'name' => get_bloginfo('name'),
+            'logo' => wp_get_attachment_image_url($common__header_logo, 'full'),
+        ];
+
+        if (!empty($contacts__phones)) {
+            $sub_array = [
+                "@type" => "ContactPoint",
+                "contactType" => "Служба підтримки",
+            ];
+            $contacts__phones_array = [];
+
+            foreach ($contacts__phones as $item) {
+                $contacts__phones_array[] = $item['phone'];
+            }
+
+            $sub_array['telephone'] = $contacts__phones_array;
+            $posting_schema['contactPoint'] = $sub_array;
+        }
+
+        if ($contacts__address) {
+            $posting_schema['address'] = [
+                '@type' => "PostalAddress",
+                'streetAddress' => $contacts__address,
+                "addressCountry" => "UA",
+            ];
+        }
+
+        if ($contacts__email) {
+            $posting_schema['email'] = $contacts__email;
+        }
+
+        echo '<script type="application/ld+json">' . json_encode($posting_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
+    }
+});
+add_action('template_redirect', function () {
+    if ( is_admin() || wp_doing_ajax() ) {
+        return;
+    }
+
+    $need_redirect = false;
+    $request_uri = $_SERVER['REQUEST_URI'];
+
+    if (preg_match('#//+#', $request_uri)) {
+        $need_redirect = true;
+        $request_uri = preg_replace('#/+#','/',$request_uri);
+    }
+
+    if ($request_uri !== strtolower($request_uri)) {
+        $need_redirect = true;
+        $request_uri = strtolower($request_uri);
+    }
+
+    if ($need_redirect) {
+        wp_safe_redirect(home_url( $request_uri ), 301);
+        exit;
+    }
+});
 
 
 // Filters
@@ -425,3 +566,60 @@ add_filter('request', function ($query_vars) {
 
     return $query_vars;
 });
+add_filter('wp_get_attachment_image_attributes', function ($attr, $attachment) {
+    global $post;
+
+    if (!$post || !is_singular())
+        return $attr;
+
+    $h1 = get_the_title($post);
+    $featured_id = get_post_thumbnail_id($post->ID);
+
+    static $image_counter = [];
+
+    $image_counter[$post->ID] = !isset($image_counter[$post->ID]) ? 1 : $image_counter[$post->ID]++;
+    $text = $attachment->ID == $featured_id ? $h1 : $h1 . ' фото ' . $image_counter[$post->ID];
+
+    $attr['alt'] = $text;
+    $attr['title'] = $text;
+
+    return $attr;
+}, 10, 2);
+add_filter('render_block_core/image', function ($block_content, $block) {
+    if (!is_singular()) {
+        return $block_content;
+    }
+
+    global $post;
+
+    if (!$post) {
+        return $block_content;
+    }
+
+    $h1 = get_the_title($post);
+
+    static $img_count = 0;
+    $img_count++;
+
+    $text = $h1;
+    if ($img_count > 1) {
+        $text .= ' фото ' . $img_count;
+    }
+
+    $block_content = preg_replace('/alt=["\']{1}["\']{1}/i', '', $block_content);
+
+    $block_content = preg_replace_callback(
+        '/<img\b[^>]*>/i',
+        function ($matches) use ($text) {
+            $img_tag = $matches[0];
+
+            $img_tag = preg_replace('/\s+alt=["\'][^"\']*["\']/', '', $img_tag);
+            $img_tag = preg_replace('/\s+title=["\'][^"\']*["\']/', '', $img_tag);
+
+            return str_replace('<img', '<img alt="' . esc_attr($text) . '" title="' . esc_attr($text) . '"', $img_tag);
+        },
+        $block_content
+    );
+
+    return $block_content;
+}, 10, 2);

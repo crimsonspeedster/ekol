@@ -88,6 +88,14 @@ if ($solutions__condition) {
                             wp_reset_postdata();
                         ?>
                     </div>
+
+                    <div class="swiper-bottom-part solutions-part-slider__bottom">
+                        <div class="swiper-button-prev"></div>
+
+                        <div class="swiper-scrollbar solutions-part-slider__scrollbar"></div>
+
+                        <div class="swiper-button-next"></div>
+                    </div>
                 </div>
                 <?php
             }

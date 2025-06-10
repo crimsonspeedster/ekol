@@ -110,7 +110,13 @@ if ($cases__condition) {
                     </div>
                 </div>
 
-                <div class="swiper-scrollbar cases-part-slider__scrollbar"></div>
+                <div class="swiper-bottom-part cases-part-slider__bottom">
+                    <div class="swiper-button-prev"></div>
+
+                    <div class="swiper-scrollbar cases-part-slider__scrollbar"></div>
+
+                    <div class="swiper-button-next"></div>
+                </div>
                 <?php
             }
 
