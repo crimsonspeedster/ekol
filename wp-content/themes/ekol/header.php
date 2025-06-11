@@ -36,7 +36,7 @@
                     }
                     else {
                         ?>
-                        <a href="<?= get_home_url(); ?>" class="header__logo">
+                        <a href="<?= trailingslashit(get_home_url()); ?>" class="header__logo">
                             <?php
                                 echo wp_get_attachment_image($common__header_logo, 'full', null, ['class' => 'header__image header__image--default']);
 

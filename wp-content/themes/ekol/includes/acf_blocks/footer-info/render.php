@@ -27,7 +27,7 @@ else {
             }
             else {
                 ?>
-                <a class="footer-info__logo" href="<?= get_home_url(); ?>">
+                <a class="footer-info__logo" href="<?= trailingslashit(get_home_url()); ?>">
                     <?php echo wp_get_attachment_image($footer_info__image, 'full'); ?>
                 </a>
                 <?php

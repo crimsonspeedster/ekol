@@ -17,7 +17,7 @@ $common__error_video = get_field('common__error_video', 'option');
 
                 <p class="error-section__description"><?= pll__('Сторінка, яку ви шукаєте, не знайдена'); ?></p>
 
-                <a href="<?= get_home_url(); ?>" class="button button--primary error-section__button"><?= pll__('Повернутись на головну'); ?></a>
+                <a href="<?= trailingslashit(get_home_url()); ?>" class="button button--primary error-section__button"><?= pll__('Повернутись на головну'); ?></a>
             </div>
         </div>
     </section>
