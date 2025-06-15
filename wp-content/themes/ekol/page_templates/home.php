@@ -70,7 +70,7 @@ $partners__bg = get_field('partners__bg');
                     <?php
                         if (!empty($partners__link)) {
                             ?>
-                            <a class="button button--primary partners__link" href="<?= $partners__link['url']; ?>" <?php getLinkAttrs($partners__link); ?>><?= $partners__link['title']; ?></a>
+                            <a class="button button--primary partners__link" data-form-select="Partnership" href="<?= $partners__link['url']; ?>" <?php getLinkAttrs($partners__link); ?>><?= $partners__link['title']; ?></a>
                             <?php
                         }
                     ?>

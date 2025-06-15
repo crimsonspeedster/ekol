@@ -151,7 +151,7 @@ get_template_part('partials/global/breadcrumbs');
                             <?php
                                 if (!empty($internship__link)) {
                                     ?>
-                                    <a href="<?= $internship__link['url']; ?>" data-aos="fade-up" class="button button--primary internship__button" <?php getLinkAttrs($internship__link); ?>><?= $internship__link['title']; ?></a>
+                                    <a href="<?= $internship__link['url']; ?>" data-form-select="HR" data-aos="fade-up" class="button button--primary internship__button" <?php getLinkAttrs($internship__link); ?>><?= $internship__link['title']; ?></a>
                                     <?php
                                 }
                             ?>

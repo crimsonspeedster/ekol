@@ -4,6 +4,7 @@ $form__pretitle = get_field('form__pretitle', 'option');
 $form__title = get_field('form__title', 'option');
 $form__description = get_field('form__description', 'option');
 $form__image_form = get_field('form__image_form', 'option');
+$form__shortcode = get_field('form__shortcode', 'option');
 
 if ($form__condition) {
     ?>
@@ -26,7 +27,7 @@ if ($form__condition) {
 
                 <div class="part-form__row">
                     <div class="part-form__left">
-                        <div class="hs-form-frame part-form__iframe" data-region="eu1" data-form-id="89ea1954-84e5-4498-949c-c07a3e819117" data-portal-id="145851954"></div>
+                        <?= do_shortcode($form__shortcode); ?>
                     </div>
 
                     <?php

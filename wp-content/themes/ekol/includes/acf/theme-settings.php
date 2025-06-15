@@ -207,6 +207,22 @@ if( function_exists('acf_add_local_field_group') ) {
                 ),
             ],
             [
+                'key' => 'acf_theme_settings-form_shortcode',
+                'name' => 'form__shortcode',
+                'label' => 'Shortcode',
+                'type' => 'text',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-form_condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
                 'key' => 'part-about_tab-about',
                 'label' => 'About',
                 'type' => 'tab',

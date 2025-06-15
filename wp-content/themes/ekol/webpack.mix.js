@@ -24,6 +24,7 @@ mix
         '@scss_global': 'src/scss/global',
         '@js': 'src/js',
         '@js_blocks': 'src/js/blocks',
+        '@node_modules': 'node_modules',
     })
     .options({
         processCssUrls: false

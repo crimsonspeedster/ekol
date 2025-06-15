@@ -11,3 +11,4 @@ import '@js_blocks/footer-menu';
 import '@js_blocks/advantages';
 import '@js_blocks/cookie_banner';
 import '@js_blocks/lazy-video';
+import '@js_blocks/form';

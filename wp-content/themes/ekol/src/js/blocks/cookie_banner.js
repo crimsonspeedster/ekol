@@ -14,3 +14,7 @@ document.querySelectorAll('[data-banner-close]').forEach(el => el.addEventListen
 
     parent_el.remove();
 }));
+
+if (!document.cookie.includes('cookie_banner')) {
+    document.querySelector('.cookie-banner').style.display = 'block';
+}

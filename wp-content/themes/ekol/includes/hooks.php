@@ -270,32 +270,6 @@ add_action('pre_get_posts', function ($query) {
         $query->set('posts_per_page', $per_page);
     }
 });
-add_action('wp_footer', function () {
-    ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (!document.getElementById('form-script')) {
-                const script = document.createElement('script');
-                script.id = 'form-script';
-                script.src = 'https://js-eu1.hsforms.net/forms/embed/145851954.js';
-                script.defer = true;
-
-                document.body.appendChild(script);
-            }
-
-            if (!document.getElementById('hs-script-loader-script')) {
-                const script = document.createElement('script');
-                script.id = 'hs-script-loader-script';
-                script.src = 'https://js-eu1.hs-scripts.com/145851954.js';
-                script.defer = true;
-                script.async = true;
-
-                document.body.appendChild(script);
-            }
-        });
-    </script>
-    <?php
-});
 add_action('wp_head', function () {
     ?>
     <meta name="google-site-verification" content="wmH_V31whVizBSBq6XkGi6JfjEeamq1V918LllVpPpY" />

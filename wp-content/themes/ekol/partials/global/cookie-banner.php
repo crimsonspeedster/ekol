@@ -1,7 +1,3 @@
-<?php
-if (isset($_COOKIE['cookie_banner']) && $_COOKIE['cookie_banner'] === 'hide')
-    return;
-?>
 <div class="cookie-banner">
     <div class="cookie-banner__backdrop" data-banner-close="true"></div>
 
