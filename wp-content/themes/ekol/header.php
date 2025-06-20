@@ -82,7 +82,7 @@
 
                             if (!empty($common__header_button)) {
                                 ?>
-                                <a href="<?= $common__header_button['url']; ?>" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
+                                <a href="<?= $common__header_button['url']; ?>" data-form-select="Commercial offer" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
                                     <?= $common__header_button['title']; ?>
                                 </a>
                                 <?php
@@ -145,7 +145,7 @@
 
                                     if (!empty($common__header_button)) {
                                         ?>
-                                        <a href="<?= $common__header_button['url']; ?>" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
+                                        <a href="<?= $common__header_button['url']; ?>" data-form-select="Commercial offer" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
                                             <?= $common__header_button['title']; ?>
                                         </a>
                                         <?php

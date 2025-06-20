@@ -41,6 +41,11 @@ document.querySelectorAll('[data-form-select]').forEach(item => item.addEventLis
     const select = document.querySelector('select[name="form_request_type"]');
 
     if (select) {
+        document.querySelector('.header').classList.remove('active');
+        document.querySelector('.header-button').classList.remove('active');
+        document.querySelector('body').classList.remove('overflow-hidden');
+        document.querySelector('.header-sidebar').classList.remove('active');
+
         select.value = type;
         select.dispatchEvent(new Event('change', { bubbles: true }));
     }

@@ -223,6 +223,38 @@ if( function_exists('acf_add_local_field_group') ) {
                 ),
             ],
             [
+                'key' => 'acf_theme_settings-form_user-name',
+                'name' => 'form__user_name',
+                'label' => 'User Name',
+                'type' => 'text',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-form_condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'acf_theme_settings-form_user-position',
+                'name' => 'form__user_position',
+                'label' => 'User Position',
+                'type' => 'text',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-form_condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
                 'key' => 'part-about_tab-about',
                 'label' => 'About',
                 'type' => 'tab',

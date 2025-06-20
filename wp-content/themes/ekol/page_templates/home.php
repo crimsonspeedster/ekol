@@ -36,7 +36,7 @@ $partners__bg = get_field('partners__bg');
 
                     if (!empty($hero__link)) {
                         ?>
-                        <a href="<?= $hero__link['url']; ?>" class="button button--primary home-hero__link hero--animation" <?php getLinkAttrs($hero__link); ?>><?= $hero__link['title']; ?></a>
+                        <a href="<?= $hero__link['url']; ?>" data-form-select="Commercial offer" class="button button--primary home-hero__link hero--animation" <?php getLinkAttrs($hero__link); ?>><?= $hero__link['title']; ?></a>
                         <?php
                     }
                 ?>

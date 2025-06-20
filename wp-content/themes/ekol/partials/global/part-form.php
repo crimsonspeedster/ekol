@@ -5,6 +5,8 @@ $form__title = get_field('form__title', 'option');
 $form__description = get_field('form__description', 'option');
 $form__image_form = get_field('form__image_form', 'option');
 $form__shortcode = get_field('form__shortcode', 'option');
+$form__user_name = get_field('form__user_name', 'option');
+$form__user_position = get_field('form__user_position', 'option');
 
 if ($form__condition) {
     ?>
@@ -34,7 +36,31 @@ if ($form__condition) {
                         if ($form__image_form) {
                             ?>
                             <div class="part-form__right">
-                                <?= wp_get_attachment_image($form__image_form, 'full'); ?>
+                                <div class="part-form__img">
+                                    <?= wp_get_attachment_image($form__image_form, 'full'); ?>
+                                </div>
+
+                                <?php
+                                    if ($form__user_position || $form__user_name) {
+                                        ?>
+                                        <div class="part-form-info">
+                                            <?php
+                                                if ($form__user_name) {
+                                                    ?>
+                                                    <h3 class="part-form-info__name"><?= $form__user_name; ?></h3>
+                                                    <?php
+                                                }
+
+                                                if ($form__user_position) {
+                                                    ?>
+                                                    <p class="part-form-info__position"><?= $form__user_position; ?></p>
+                                                    <?php
+                                                }
+                                            ?>
+                                        </div>
+                                        <?php
+                                    }
+                                ?>
                             </div>
                             <?php
                         }
