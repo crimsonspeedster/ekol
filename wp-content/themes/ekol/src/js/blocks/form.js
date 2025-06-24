@@ -52,3 +52,32 @@ document.querySelectorAll('[data-form-select]').forEach(item => item.addEventLis
 
     item.click();
 }));
+
+const params = new URLSearchParams(window.location.search);
+
+if (params.has('form')) {
+    const get_data_form = params.get('form');
+    console.log(get_data_form);
+
+    setTimeout(function () {
+        const select = document.querySelector('select[name="form_request_type"]');
+        console.log(select);
+
+        if (select) {
+            let select_value = '';
+            const select_options = select.querySelectorAll('option');
+            select_options.forEach(item => {
+                if (item.value.toLowerCase() === get_data_form) {
+                    select_value = item.value;
+                }
+            });
+
+            console.log(select_value);
+
+            select.value = select_value;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+            select.value = select_value;
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    }, 1000);
+}
