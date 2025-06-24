@@ -19,13 +19,13 @@ window.addEventListener('load', () => {
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    let min_offset = header.offsetHeight;
+    // let min_offset = header.offsetHeight;
 
-    if (currentScroll > lastScroll && currentScroll > min_offset) {
-        header.classList.add('hide');
-    } else {
-        header.classList.remove('hide');
-    }
+    // if (currentScroll > lastScroll && currentScroll > min_offset) {
+    //     header.classList.add('hide');
+    // } else {
+    //     header.classList.remove('hide');
+    // }
 
     if (document.querySelector('body.page-template-home') && window.innerWidth < 1200) {
         if (currentScroll > home_hero_el.offsetHeight) {

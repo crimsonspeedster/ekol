@@ -57,7 +57,8 @@ add_action( 'wp_enqueue_scripts', function () {
             wp_enqueue_style( "template-style", $template_style_uri, [], $ver );
         }
     }
-    elseif (is_404()) {
+
+    if (is_404() || $template_slug === 'thanks') {
         wp_enqueue_style( "template-style", get_template_directory_uri() . '/dist/css/page_templates/404.css', [], $ver );
     }
 }, 10010 );

@@ -407,7 +407,7 @@ document.querySelectorAll('.reviews-slider--names').forEach((item, i) => {
         allowTouchMove: false,
         breakpoints: {
             1200: {
-                slidesPerView: 'auto',
+                slidesPerView: 3,
                 spaceBetween: 29,
                 initialSlide: 1,
                 centeredSlides: true,
