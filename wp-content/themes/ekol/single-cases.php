@@ -9,6 +9,8 @@ $company__title = get_field('company__title');
 $company__description = get_field('company__description');
 $company__image = get_field('company__image');
 
+$common__image = get_field('common__image');
+
 get_template_part('partials/global/breadcrumbs');
 ?>
     <main>
@@ -16,7 +18,14 @@ get_template_part('partials/global/breadcrumbs');
             <section class="section-case">
                 <div class="container section-case__wrapper">
                     <div class="section-case__image">
-                        <?php getPostThumbnail(get_the_ID()); ?>
+                        <?php
+                            if ($common__image) {
+                                echo wp_get_attachment_image($common__image, 'full');
+                            }
+                            else {
+                                getPostThumbnail(get_the_ID());
+                            }
+                        ?>
                     </div>
 
                     <h1 class="section-case__title"><?php the_title(); ?></h1>

@@ -7,6 +7,20 @@ if( function_exists('acf_add_local_field_group') ):
         'title' => 'Type Cases',
         'fields' => [
             [
+                'key' => 'type-cases_tab-common',
+                'label' => 'Common',
+                'type' => 'tab',
+                'placement' => 'top',
+            ],
+            [
+                'key' => 'type-cases_common-image',
+                'name' => 'common__image',
+                'label' => 'Image Big',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 0,
+            ],
+            [
                 'key' => 'type-cases_tab-company',
                 'label' => 'Company',
                 'type' => 'tab',

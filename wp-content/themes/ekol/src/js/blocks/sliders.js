@@ -400,11 +400,28 @@ document.querySelectorAll('.reviews-slider--names').forEach((item, i) => {
     const parent_el = item.closest('.reviews');
     const comments_el = parent_el.querySelector('.reviews-slider--main');
 
+    const comments_slider = new Swiper(comments_el, {
+        initialSlide: 0,
+        loop: true,
+        allowTouchMove: false,
+        breakpoints: {
+            1200: {
+                initialSlide: 1,
+            }
+        },
+    });
+
     const names_slider = new Swiper(item, {
+        modules: [Navigation],
         slidesPerView: 1,
         spaceBetween: 0,
-        autoHeight: true,
+        // autoHeight: true,
+        loop: true,
         allowTouchMove: false,
+        navigation: {
+            nextEl: parent_el.querySelector('.swiper-button-next'),
+            prevEl: parent_el.querySelector('.swiper-button-prev'),
+        },
         breakpoints: {
             1200: {
                 slidesPerView: 3,
@@ -414,32 +431,19 @@ document.querySelectorAll('.reviews-slider--names').forEach((item, i) => {
                 centeredSlidesBounds: true,
             }
         },
-    });
-
-    const comments_slider = new Swiper(comments_el, {
-        modules: [Navigation],
-        initialSlide: 1,
-        allowTouchMove: false,
-        navigation: {
-            nextEl: parent_el.querySelector('.swiper-button-next'),
-            prevEl: parent_el.querySelector('.swiper-button-prev'),
-        },
         on: {
             slideChange: function (instance) {
-                names_slider.slideTo(instance.activeIndex);
+                comments_slider.slideTo(instance.realIndex);
 
-                let numberIndex = instance.activeIndex + 1;
+                let numberIndex = instance.realIndex + 1;
 
                 numberIndex = numberIndex <= 9 ? '0' + numberIndex : numberIndex;
-
-                document.querySelectorAll('.reviews-names__title').forEach(item => item.classList.remove('active'));
-                document.querySelectorAll('.reviews-names__title')[instance.activeIndex].classList.add('active');
 
                 if (document.querySelector('.reviews__number')) {
                     document.querySelector('.reviews__number').textContent = numberIndex;
                 }
             }
-        },
+        }
     });
 });
 
