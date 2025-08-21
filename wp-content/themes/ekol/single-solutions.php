@@ -9,6 +9,7 @@ $page_for_posts_id = get_field( 'common__archive_cases', 'option' );
 
         get_template_part('partials/part-hero', '', [
             'repeater' => get_field('hero__repeater'),
+            'is_h1_disabled' => get_field('hero__is_h1_disabled'),
         ]);
     ?>
 

@@ -3,6 +3,7 @@ if (empty($args))
     return;
 
 $hero__repeater = $args['repeater'];
+$is_h1_disabled = $args['is_h1_disabled'];
 
 if (!empty($hero__repeater)) {
     ?>
@@ -18,15 +19,22 @@ if (!empty($hero__repeater)) {
                                     <div class="hero-block-item">
                                         <div class="hero-block-item__info">
                                             <?php
-                                                if ($index === 0) {
+                                                if ($is_h1_disabled) {
                                                     ?>
-                                                    <h1 class="hero-block-item__title hero--animation"><?= $item['title']; ?></h1>
+                                                    <p class="h1 hero-block-item__title hero--animation"><?= $item['title']; ?></p>
                                                     <?php
                                                 }
                                                 else {
-                                                    ?>
-                                                    <h2 class="h1 hero-block-item__title hero--animation"><?= $item['title']; ?></h2>
-                                                    <?php
+                                                    if ($index === 0) {
+                                                        ?>
+                                                        <h1 class="hero-block-item__title hero--animation"><?= $item['title']; ?></h1>
+                                                        <?php
+                                                    }
+                                                    else {
+                                                        ?>
+                                                        <h2 class="h1 hero-block-item__title hero--animation"><?= $item['title']; ?></h2>
+                                                        <?php
+                                                    }
                                                 }
 
                                                 if ($item['description']) {

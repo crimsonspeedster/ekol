@@ -25,7 +25,7 @@ $partners__bg = get_field('partners__bg');
 
         <div class="container background-block__container">
             <div class="home-hero__wrapper">
-                <h1 class="home-hero__title hero--animation"><?= $hero__title; ?></h1>
+                <p class="h1 home-hero__title hero--animation"><?= $hero__title; ?></p>
 
                 <?php
                     if ($hero__description) {
@@ -45,7 +45,9 @@ $partners__bg = get_field('partners__bg');
     </section>
 
     <?php
-        get_template_part('partials/part-about');
+        get_template_part('partials/part-about', '', [
+            'block_h1' => get_field('part_about__heading'),
+        ]);
 
         get_template_part('partials/part-services');
 

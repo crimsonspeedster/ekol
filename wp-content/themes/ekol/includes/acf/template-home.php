@@ -43,6 +43,18 @@ if( function_exists('acf_add_local_field_group') ):
                 'mime_types' => 'mp4,webm,ogg',
             ],
             [
+                'key' => 'template-home_tab-about',
+                'label' => 'About',
+                'type' => 'tab',
+            ],
+            [
+                'key' => 'template-home_about-title',
+                'name' => 'part_about__heading',
+                'label' => 'Title',
+                'type' => 'text',
+                'required' => 1,
+            ],
+            [
                 'key' => 'template-home_tab-partners',
                 'label' => 'Partners',
                 'type' => 'tab',

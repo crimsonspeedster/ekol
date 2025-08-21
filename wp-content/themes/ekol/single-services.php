@@ -6,6 +6,7 @@ get_header();
             get_template_part('partials/global/breadcrumbs');
 
             get_template_part('partials/part-hero', '', [
+                'is_h1_disabled' => get_field('hero__is_h1_disabled'),
                 'repeater' => get_field('hero__repeater'),
             ]);
         ?>

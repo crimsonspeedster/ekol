@@ -13,6 +13,15 @@ if( function_exists('acf_add_local_field_group') ):
                 'placement' => 'top',
             ],
             [
+                'key' => 'part-hero_heading-condition',
+                'name' => 'hero__is_h1_disabled',
+                'label' => 'Disable H1?',
+                'type' => 'true_false',
+                'required' => 0,
+                'default_value' => 0,
+                'ui' => 1,
+            ],
+            [
                 'key' => 'part-hero-repeater',
                 'label' => 'Repeater',
                 'name' => 'hero__repeater',

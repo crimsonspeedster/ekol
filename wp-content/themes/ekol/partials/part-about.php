@@ -1,4 +1,6 @@
 <?php
+$block_h1 = !empty($args) && $args['block_h1'] ? $args['block_h1'] : '';
+
 $part_about__condition = get_field('part_about__condition', 'option');
 $part_about__pretitle = get_field('part_about__pretitle', 'option');
 $part_about__title = get_field('part_about__title', 'option');
@@ -43,7 +45,17 @@ if ($part_about__condition) {
                 <h2 class="part-about__title"><?= $part_about__title; ?></h2>
 
                 <div class="part-about__right">
-                    <div class="content part-about__description"><?= $part_about__description; ?></div>
+                    <div class="content part-about__description">
+                        <?php
+                            if ($block_h1) {
+                                ?>
+                                <h1><?= $block_h1; ?></h1>
+                                <?php
+                            }
+
+                            echo $part_about__description;
+                        ?>
+                    </div>
 
                     <?php
                         if (!empty($part_about__link)) {

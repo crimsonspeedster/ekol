@@ -2,6 +2,7 @@
 $is_preview = get_field('is_preview');
 
 $about_solution__pretitle = get_field('about_solution__pretitle');
+$about_solution__heading = get_field('about_solution__heading');
 $about_solution__title = get_field('about_solution__title');
 $about_solution__description = get_field('about_solution__description');
 $about_solution__link = get_field('about_solution__link');
@@ -16,6 +17,14 @@ else {
     ?>
     <div <?= get_block_wrapper_attributes(['class' => 'about-solution']); ?>>
         <div class="about-solution__left">
+            <?php
+                if ($about_solution__heading) {
+                    ?>
+                    <h1 class="about-solution__heading" data-aos="fade-up"><?= $about_solution__heading; ?></h1>
+                    <?php
+                }
+            ?>
+
             <p class="pretitle about-solution__pretitle" data-aos="fade-up"><?= $about_solution__pretitle; ?></p>
 
             <h2 class="about-solution__title" data-aos="fade-up"><?= $about_solution__title; ?></h2>

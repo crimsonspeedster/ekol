@@ -14,6 +14,13 @@ if( function_exists('acf_add_local_field_group') ):
                 'required' => 1,
             ],
             [
+                'key' => 'block-about-solution-heading',
+                'name' => 'about_solution__heading',
+                'label' => 'Heading',
+                'type' => 'text',
+                'required' => 0,
+            ],
+            [
                 'key' => 'block-about-solution-title',
                 'name' => 'about_solution__title',
                 'label' => 'Text',
