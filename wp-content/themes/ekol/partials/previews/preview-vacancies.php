@@ -7,7 +7,7 @@ $common__description_hidden = get_field('common__description_hidden');
 $terms = get_the_terms(get_the_ID(), 'vacancies_cat');
 ?>
 
-<div class="preview-vacancies preview-vacancies--<?= get_the_ID(); ?>">
+<div class="preview-vacancies preview-vacancies--<?= get_the_ID(); ?>" id="vacancy--<?= get_the_ID(); ?>">
     <div class="preview-vacancies__list">
         <p class="pretitle preview-vacancies-pretitle">
             <?=
