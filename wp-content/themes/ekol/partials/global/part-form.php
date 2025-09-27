@@ -1,12 +1,18 @@
 <?php
-$form__condition = get_field('form__condition', 'option');
-$form__pretitle = get_field('form__pretitle', 'option');
-$form__title = get_field('form__title', 'option');
-$form__description = get_field('form__description', 'option');
-$form__image_form = get_field('form__image_form', 'option');
-$form__shortcode = get_field('form__shortcode', 'option');
-$form__user_name = get_field('form__user_name', 'option');
-$form__user_position = get_field('form__user_position', 'option');
+$form__condition = get_field('form__condition');
+$_post_id = $form__condition ? get_the_ID() : 'option';
+
+if (!$form__condition) {
+    $form__condition = get_field('form__condition', 'option');
+}
+
+$form__pretitle = get_field('form__pretitle', $_post_id);
+$form__title = get_field('form__title', $_post_id);
+$form__description = get_field('form__description', $_post_id);
+$form__image_form = get_field('form__image_form', $_post_id);
+$form__shortcode = get_field('form__shortcode', $_post_id);
+$form__user_name = get_field('form__user_name', $_post_id);
+$form__user_position = get_field('form__user_position', $_post_id);
 
 if ($form__condition) {
     ?>
