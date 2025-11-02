@@ -9,10 +9,8 @@ if (!$form__condition) {
 $form__pretitle = get_field('form__pretitle', $_post_id);
 $form__title = get_field('form__title', $_post_id);
 $form__description = get_field('form__description', $_post_id);
-$form__image_form = get_field('form__image_form', $_post_id);
 $form__shortcode = get_field('form__shortcode', $_post_id);
-$form__user_name = get_field('form__user_name', $_post_id);
-$form__user_position = get_field('form__user_position', $_post_id);
+$form__repeater = get_field('form__repeater', $_post_id);
 
 if ($form__condition) {
     ?>
@@ -39,34 +37,54 @@ if ($form__condition) {
                     </div>
 
                     <?php
-                        if ($form__image_form) {
+                        if (!empty($form__repeater)) {
                             ?>
                             <div class="part-form__right">
-                                <div class="part-form__img">
-                                    <?= wp_get_attachment_image($form__image_form, 'full'); ?>
+                                <div class="part-form-slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <?php
+                                            foreach ($form__repeater as $item) {
+                                                ?>
+                                                <div class="swiper-slide">
+                                                    <div class="part-form__img">
+                                                        <?= wp_get_attachment_image($item['image_id'], 'full'); ?>
+                                                    </div>
+
+                                                    <?php
+                                                        if ($item['name'] || $item['position']) {
+                                                            ?>
+                                                            <div class="part-form-info">
+                                                                <?php
+                                                                    if ($item['name']) {
+                                                                        ?>
+                                                                        <h3 class="part-form-info__name"><?= $item['name']; ?></h3>
+                                                                        <?php
+                                                                    }
+
+                                                                    if ($item['position']) {
+                                                                        ?>
+                                                                        <p class="part-form-info__position"><?= $item['position']; ?></p>
+                                                                        <?php
+                                                                    }
+                                                                ?>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                    ?>
+                                                </div>
+                                                <?php
+                                            }
+                                        ?>
+                                    </div>
                                 </div>
 
-                                <?php
-                                    if ($form__user_position || $form__user_name) {
-                                        ?>
-                                        <div class="part-form-info">
-                                            <?php
-                                                if ($form__user_name) {
-                                                    ?>
-                                                    <h3 class="part-form-info__name"><?= $form__user_name; ?></h3>
-                                                    <?php
-                                                }
+                                <div class="swiper-bottom-part part-form-slider__bottom">
+                                    <div class="swiper-button-prev"></div>
 
-                                                if ($form__user_position) {
-                                                    ?>
-                                                    <p class="part-form-info__position"><?= $form__user_position; ?></p>
-                                                    <?php
-                                                }
-                                            ?>
-                                        </div>
-                                        <?php
-                                    }
-                                ?>
+                                    <div class="swiper-scrollbar part-form-slider__scrollbar"></div>
+
+                                    <div class="swiper-button-next"></div>
+                                </div>
                             </div>
                             <?php
                         }

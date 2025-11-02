@@ -273,7 +273,13 @@
         width: 100%;
 
         @media (max-width: 1199px) {
-            display: none;
+            display: none !important;
+        }
+    }
+
+    &-slider {
+        &__bottom {
+            margin-top: 18px;
         }
     }
 

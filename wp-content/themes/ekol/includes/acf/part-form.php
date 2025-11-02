@@ -69,12 +69,14 @@ if( function_exists('acf_add_local_field_group') ) {
                 ),
             ],
             [
-                'key' => 'acf_theme_settings-form_image_form',
-                'name' => 'form__image_form',
-                'label' => 'Image for block Form',
-                'type' => 'image',
-                'return_format' => 'id',
+                'key' => 'acf_theme_settings-form-repeater',
+                'label' => 'Repeater',
+                'name' => 'form__repeater',
+                'type' => 'repeater',
                 'required' => 1,
+                'layout' => 'table',
+                'min' => 1,
+                'max' => 0,
                 'conditional_logic' => array(
                     array(
                         array(
@@ -84,6 +86,30 @@ if( function_exists('acf_add_local_field_group') ) {
                         ),
                     ),
                 ),
+                'sub_fields' => [
+                    [
+                        'key' => 'acf_theme_settings-form-repeater_image',
+                        'name' => 'image_id',
+                        'label' => 'Image for block Form',
+                        'type' => 'image',
+                        'return_format' => 'id',
+                        'required' => 1,
+                    ],
+                    [
+                        'key' => 'acf_theme_settings-form-repeater_name',
+                        'name' => 'name',
+                        'label' => 'User Name',
+                        'type' => 'text',
+                        'required' => 0,
+                    ],
+                    [
+                        'key' => 'acf_theme_settings-form-repeater_position',
+                        'name' => 'position',
+                        'label' => 'User Position',
+                        'type' => 'text',
+                        'required' => 0,
+                    ],
+                ],
             ],
             [
                 'key' => 'acf_theme_settings-form_shortcode',
@@ -91,38 +117,6 @@ if( function_exists('acf_add_local_field_group') ) {
                 'label' => 'Shortcode',
                 'type' => 'text',
                 'required' => 1,
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'acf_theme_settings-form_condition',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ],
-            [
-                'key' => 'acf_theme_settings-form_user-name',
-                'name' => 'form__user_name',
-                'label' => 'User Name',
-                'type' => 'text',
-                'required' => 0,
-                'conditional_logic' => array(
-                    array(
-                        array(
-                            'field' => 'acf_theme_settings-form_condition',
-                            'operator' => '==',
-                            'value' => '1',
-                        ),
-                    ),
-                ),
-            ],
-            [
-                'key' => 'acf_theme_settings-form_user-position',
-                'name' => 'form__user_position',
-                'label' => 'User Position',
-                'type' => 'text',
-                'required' => 0,
                 'conditional_logic' => array(
                     array(
                         array(

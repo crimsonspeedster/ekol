@@ -168,6 +168,25 @@ document.querySelectorAll('.blog-part-slider').forEach(item => {
     });
 });
 
+document.querySelectorAll('.part-form-slider').forEach(item => {
+    const parent_el = item.closest('.part-form');
+
+    new Swiper(item, {
+        modules: [Scrollbar, Navigation],
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 0,
+        scrollbar: {
+            el: parent_el.querySelector('.swiper-scrollbar'),
+            hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
+        },
+    });
+});
+
 document.querySelectorAll('.cases-part-slider').forEach(item => {
     const parent_el = item.closest('.cases-part');
 
