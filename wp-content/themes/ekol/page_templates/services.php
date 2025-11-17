@@ -49,6 +49,8 @@ if (!empty($services__posts)) {
         get_template_part('partials/part-solutions');
 
         get_template_part('partials/global/part-form');
+
+        get_template_part('partials/part-seo');
     ?>
 </main>
 <?php

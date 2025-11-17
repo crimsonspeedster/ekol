@@ -597,3 +597,10 @@ add_filter('render_block_core/image', function ($block_content, $block) {
 
     return $block_content;
 }, 10, 2);
+add_filter('wpseo_robots', function ($robots) {
+    if (isset($_GET['s']) && !empty($_GET['s'])) {
+        return 'noindex, nofollow';
+    }
+
+    return $robots;
+});

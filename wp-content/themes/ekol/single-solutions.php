@@ -38,6 +38,8 @@ $page_for_posts_id = get_field( 'common__archive_cases', 'option' );
         ]);
 
         get_template_part('partials/global/part-form');
+
+        get_template_part('partials/part-seo');
     ?>
 </main>
 <?php

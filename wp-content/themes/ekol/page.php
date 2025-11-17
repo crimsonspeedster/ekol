@@ -27,6 +27,8 @@ get_template_part('partials/global/breadcrumbs');
                 <div class="content page-section__content"><?php the_content(); ?></div>
             </div>
         </section>
+
+        <?php get_template_part('partials/part-seo'); ?>
     </main>
 <?php
 get_footer();

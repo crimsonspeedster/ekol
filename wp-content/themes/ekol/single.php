@@ -126,6 +126,8 @@ get_template_part('partials/global/breadcrumbs');
             ]);
 
             get_template_part('partials/global/part-form');
+
+            get_template_part('partials/part-seo');
         ?>
     </main>
 <?php
