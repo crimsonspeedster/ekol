@@ -33,7 +33,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'block_logistics__repeater',
                 'type' => 'repeater',
                 'required' => 1,
-                'layout' => 'table',
+                'layout' => 'block',
                 'min' => 1,
                 'max' => 0,
                 'sub_fields' => [
@@ -43,6 +43,9 @@ if( function_exists('acf_add_local_field_group') ):
                         'label' => 'Title',
                         'type' => 'text',
                         'required' => 1,
+                        'wrapper' => [
+                            'width' => 33,
+                        ],
                     ],
                     [
                         'key' => 'block-logistics-repeater_description',
@@ -50,6 +53,9 @@ if( function_exists('acf_add_local_field_group') ):
                         'label' => 'Description',
                         'type' => 'textarea',
                         'required' => 1,
+                        'wrapper' => [
+                            'width' => 33,
+                        ],
                     ],
                     [
                         'key' => 'block-logistics-repeater_image',
@@ -58,6 +64,24 @@ if( function_exists('acf_add_local_field_group') ):
                         'type' => 'image',
                         'return_format' => 'id',
                         'required' => 1,
+                        'wrapper' => [
+                            'width' => 34,
+                        ],
+                    ],
+                    [
+                        'key' => 'block-logistics-repeater_decisions-link',
+                        'name' => 'decisions_link',
+                        'label' => 'Decisions link',
+                        'type' => 'relationship',
+                        'required' => 0,
+                        'post_type' => ['decisions'],
+                        'filters' => ['search', 'post_type'],
+                        'return_format' => 'id',
+                        'min' => 0,
+                        'max' => 1,
+                        'wrapper' => [
+                            'width' => 100,
+                        ],
                     ],
                 ],
             ],

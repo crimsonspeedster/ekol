@@ -20,40 +20,44 @@ else {
             <h2 class="logistics__title" data-aos="fade-up"><?= $block_logistics__title; ?></h2>
 
             <?php
-                if ($block_logistics__description) {
-                    ?>
-                    <div class="logistics__description" data-aos="fade-up"><?= $block_logistics__description; ?></div>
-                    <?php
-                }
+            if ($block_logistics__description) {
+                ?>
+                <div class="logistics__description" data-aos="fade-up"><?= $block_logistics__description; ?></div>
+                <?php
+            }
             ?>
         </div>
 
         <?php
-            if (!empty($block_logistics__repeater)) {
-                ?>
-                <div class="logistics__row" data-aos="fade-up">
-                    <?php
-                        foreach ($block_logistics__repeater as $item) {
-                            ?>
-                            <div class="logistics-item">
-                                <div class="logistics-item__img">
-                                    <?= wp_get_attachment_image($item['image_id'], 'full'); ?> ?>
-                                </div>
-
-                                <div class="logistics-item__block">
-                                    <p class="h4 logistics-item__title"><?= $item['title']; ?></p>
-
-                                    <div class="logistics-item__description">
-                                        <p><?= $item['description']; ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                    ?>
-                </div>
+        if (!empty($block_logistics__repeater)) {
+            ?>
+            <div class="logistics__row" data-aos="fade-up">
                 <?php
-            }
+                foreach ($block_logistics__repeater as $item) {
+                    $decision_id = $item['decisions_link'][0] ?? null;
+                    ?>
+                    <div class="logistics-item">
+                        <?php if ( ! empty( $decision_id ) ) { ?>
+                            <a href="<?= get_permalink( $decision_id );?>" style="position: absolute; inset: 0; z-index: 5"></a>
+                        <?php } ?>
+                        <div class="logistics-item__img">
+                            <?= wp_get_attachment_image($item['image_id'], 'full'); ?> ?>
+                        </div>
+
+                        <div class="logistics-item__block">
+                            <p class="h4 logistics-item__title"><?= $item['title']; ?></p>
+
+                            <div class="logistics-item__description">
+                                <p><?= $item['description']; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+            <?php
+        }
         ?>
     </div>
     <?php
