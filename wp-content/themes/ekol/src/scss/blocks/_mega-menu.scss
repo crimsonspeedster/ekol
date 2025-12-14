@@ -11,6 +11,7 @@
     overflow: hidden;
     left: 0;
     top: 100%;
+    box-shadow: 0 44px 4px 0 #051F5340;
 
     &.active {
         display: block;
@@ -31,6 +32,7 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
+        align-items: flex-start;
     }
 
     &__title {
@@ -59,13 +61,9 @@
             &:hover {
                 .mega-menu-item__title {
                     color: #06AEEF;
-                }
-
-                .mega-menu-item__button {
-                    color: #059DD7;
 
                     path {
-                        fill: #059DD7;
+                        fill: #06AEEF;
                     }
                 }
             }
@@ -77,6 +75,22 @@
             font-weight: 450;
             font-size: 24px;
             line-height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+
+            span {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            svg {
+                min-width: 24px;
+                width: 24px;
+                height: 24px;
+            }
         }
 
         &__description {
