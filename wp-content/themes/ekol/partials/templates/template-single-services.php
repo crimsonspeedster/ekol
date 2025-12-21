@@ -1,0 +1,31 @@
+<?php
+get_header();
+?>
+    <main>
+        <?php
+        get_template_part('partials/global/breadcrumbs');
+
+        get_template_part('partials/part-hero', '', [
+            'is_h1_disabled' => get_field('hero__is_h1_disabled'),
+            'repeater' => get_field('hero__repeater'),
+        ]);
+        ?>
+
+        <section class="single-service-section">
+            <div class="container">
+                <div class="content single-service-section__content">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </section>
+
+        <?php
+        get_template_part('partials/global/part-form');
+
+        get_template_part('partials/part-solutions');
+
+        get_template_part('partials/part-seo');
+        ?>
+    </main>
+<?php
+get_footer();
