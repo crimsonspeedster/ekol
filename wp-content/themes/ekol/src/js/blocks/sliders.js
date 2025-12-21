@@ -205,20 +205,18 @@ document.querySelectorAll('.cases-part-slider').forEach(item => {
         },
         breakpoints: {
             0: {
-                enabled: false,
-                init: false,
-                spaceBetween: 0,
-                slidesPerView: 1,
+                spaceBetween: 8,
+                slidesPerView: 1.12,
+                slidesOffsetAfter: 16,
+                slidesOffsetBefore: 16,
             },
             576: {
                 slidesPerView: 1.3,
                 slidesOffsetAfter: 16,
                 slidesOffsetBefore: 16,
-                autoHeight: true,
             },
             768: {
                 slidesPerView: 1.5,
-                autoHeight: true,
                 slidesOffsetAfter: 16,
                 slidesOffsetBefore: 16,
             },
@@ -226,17 +224,20 @@ document.querySelectorAll('.cases-part-slider').forEach(item => {
                 slidesOffsetBefore: 60,
                 slidesOffsetAfter: 60,
                 spaceBetween: 20,
-                autoHeight: true,
                 slidesPerView: 1.8,
             },
             1200: {
                 slidesOffsetBefore: 60,
                 slidesOffsetAfter: 60,
                 slidesPerView: 2.175,
-                autoHeight: true,
                 spaceBetween: 40,
             }
         },
+        on: {
+            slidesUpdated: () => {
+                item.classList.add('swiper-auto-height-initialized');
+            }
+        }
     });
 });
 
@@ -325,6 +326,11 @@ document.querySelectorAll('.solutions-part-slider').forEach(item => {
                 slidesOffsetAfter: 60,
             }
         },
+        on: {
+            afterInit: () => {
+                item.classList.add('swiper-auto-height-initialized');
+            }
+        }
     });
 });
 

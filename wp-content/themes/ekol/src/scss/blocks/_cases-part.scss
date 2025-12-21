@@ -103,18 +103,6 @@
     &-slider {
         margin-top: 32px;
 
-        @media (max-width: 575px) {
-            width: calc(100% - 32px);
-            margin: 24px auto 0;
-        }
-
-        .swiper-wrapper {
-            @media (max-width: 575px) {
-                flex-direction: column;
-                gap: 40px;
-            }
-        }
-
         &__bottom {
             margin-top: 32px;
         }
