@@ -42,20 +42,20 @@ add_action('init', function () {
             'show_in_rest'        => true,
             'supports'            => array('title', 'thumbnail', 'editor', 'excerpt'),
         ],
-            'decisions' => [
-                    'label'  => null,
-                    'labels' => array(
-                            'name'               => pll__('Ключові рішення'),
-                            'singular_name'      => pll__('Ключове рішення'),
-                            'menu_name'          => pll__('Ключові рішення')
-                    ),
-                    'has_archive'         => false,
-                    'public'              => true,
-                    'exclude_from_search' => true,
-                    'show_in_menu'        => true,
-                    'show_in_rest'        => true,
-                    'supports'            => array('title', 'thumbnail', 'editor', 'excerpt'),
-            ],
+        'decisions' => [
+                'label'  => null,
+                'labels' => array(
+                        'name'               => pll__('Ключові рішення'),
+                        'singular_name'      => pll__('Ключове рішення'),
+                        'menu_name'          => pll__('Ключові рішення')
+                ),
+                'has_archive'         => false,
+                'public'              => true,
+                'exclude_from_search' => true,
+                'show_in_menu'        => true,
+                'show_in_rest'        => true,
+                'supports'            => array('title', 'thumbnail', 'editor', 'excerpt'),
+        ],
         'cases' => [
             'label'  => null,
             'labels' => array(

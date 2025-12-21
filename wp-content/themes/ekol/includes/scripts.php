@@ -58,6 +58,15 @@ add_action( 'wp_enqueue_scripts', function () {
         }
     }
 
+    if ( get_post_type() === 'decisions' ) {
+        $template_style_path = get_template_directory() . "/dist/css/page_templates/single-services.css";
+        $template_style_uri  = get_template_directory_uri() . "/dist/css/page_templates/single-services.css";
+
+        if (file_exists($template_style_path)) {
+            wp_enqueue_style( "services-style", $template_style_uri, [], $ver );
+        }
+    }
+
     if (is_404() || $template_slug === 'thanks') {
         wp_enqueue_style( "template-style", get_template_directory_uri() . '/dist/css/page_templates/404.css', [], $ver );
     }
