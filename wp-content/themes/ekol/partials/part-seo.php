@@ -7,8 +7,8 @@ if (!$part_seo__description) {
 ?>
 <section class="part-seo">
     <div class="container">
-        <div class="part-seo__description content"><?= $part_seo__description; ?></div>
+        <div data-aos="fade-up" class="part-seo__description content"><?= $part_seo__description; ?></div>
 
-        <button class="part-seo__button button button--primary"><?= pll__('Читати далі'); ?></button>
+        <button data-aos="fade-up" class="part-seo__button button button--primary"><?= pll__('Читати далі'); ?></button>
     </div>
 </section>
