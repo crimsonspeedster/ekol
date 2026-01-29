@@ -12,3 +12,4 @@ import '@js_blocks/advantages';
 import '@js_blocks/cookie_banner';
 import '@js_blocks/lazy-video';
 import '@js_blocks/form';
+import '@js_blocks/read-more';

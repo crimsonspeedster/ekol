@@ -528,6 +528,17 @@ add_filter('wpseo_breadcrumb_links', function ($links) {
         }
     }
 
+    $related_post_id_before_current = get_field('breadcrumbs__related_post');
+
+    if ($related_post_id_before_current) {
+        $position = count($links) - 1;
+
+        array_splice($links, $position, 0, [[
+                'url'  => get_permalink($related_post_id_before_current),
+                'text' => get_the_title($related_post_id_before_current),
+        ]]);
+    }
+
     return $links;
 }, 10, 1);
 add_filter('walker_nav_menu_start_el', function ($item_output, $item, $depth, $args) {
