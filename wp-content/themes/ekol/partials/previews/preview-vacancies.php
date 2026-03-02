@@ -32,7 +32,7 @@ $terms = get_the_terms(get_the_ID(), 'vacancies_cat');
     </div>
 
     <div class="preview-vacancies__body">
-        <h4 class="preview-vacancies__title"><?php the_title(); ?></h4>
+        <a href="<?php the_permalink(); ?>" class="preview-vacancies__title h4"><?php the_title(); ?></a>
 
         <?php
             if ($common__location) {
