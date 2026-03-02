@@ -22,8 +22,8 @@ switch ($cases__type) {
             'post_type'      => 'cases',
             'posts_per_page' => $cases__posts_number,
             'post_status'    => 'publish',
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
+            'orderby' => 'date',
+            'order'   => 'DESC',
         ]);
         break;
     default:
@@ -33,8 +33,8 @@ switch ($cases__type) {
             'post_type'      => 'cases',
             'posts_per_page' => $cases__posts_number,
             'post_status'    => 'publish',
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
+            'orderby' => 'date',
+            'order'   => 'DESC',
         ]);
         break;
 }

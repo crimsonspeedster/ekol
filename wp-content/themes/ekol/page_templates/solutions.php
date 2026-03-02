@@ -11,8 +11,8 @@ $solutions_posts = get_posts([
     'post_type'      => 'solutions',
     'posts_per_page' => -1,
     'post_status'    => 'publish',
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
+    'orderby' => 'date',
+    'order'   => 'DESC',
     'fields' => 'ids',
 ]);
 

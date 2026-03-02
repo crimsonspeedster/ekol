@@ -21,8 +21,8 @@ switch ($services_big__type) {
             'post_type'      => 'services',
             'posts_per_page' => $services_big__number,
             'post_status'    => 'publish',
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
+            'orderby' => 'date',
+            'order'   => 'DESC',
         ]);
         break;
     default:
@@ -32,8 +32,8 @@ switch ($services_big__type) {
             'post_type'      => 'services',
             'posts_per_page' => $services_big__number,
             'post_status'    => 'publish',
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
+            'orderby' => 'date',
+            'order'   => 'DESC',
         ]);
         break;
 }

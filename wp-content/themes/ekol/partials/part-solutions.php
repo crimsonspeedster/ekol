@@ -22,8 +22,8 @@ switch ($solutions__type) {
             'post_type'      => 'solutions',
             'posts_per_page' => $solutions__posts_number,
             'post_status'    => 'publish',
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
+            'orderby' => 'date',
+            'order'   => 'DESC',
         ]);
         break;
     default:
@@ -33,8 +33,8 @@ switch ($solutions__type) {
             'post_type'      => 'solutions',
             'posts_per_page' => $solutions__posts_number,
             'post_status'    => 'publish',
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
+            'orderby' => 'date',
+            'order'   => 'DESC',
         ]);
         break;
 }

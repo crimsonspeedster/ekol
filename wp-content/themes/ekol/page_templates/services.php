@@ -11,8 +11,8 @@ $services__posts = get_posts([
     'post_type'      => 'services',
     'posts_per_page' => -1,
     'post_status'    => 'publish',
-    'orderby' => 'menu_order',
-    'order' => 'ASC',
+    'orderby' => 'date',
+    'order'   => 'DESC',
     'fields' => 'ids',
 ]);
 
