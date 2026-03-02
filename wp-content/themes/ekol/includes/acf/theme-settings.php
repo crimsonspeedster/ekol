@@ -296,6 +296,123 @@ if( function_exists('acf_add_local_field_group') ) {
                     ),
                 ),
             ],
+            [
+                'key' => 'acf_theme_settings-tab-vacancies',
+                'label' => 'Vacancies',
+                'type' => 'tab',
+                'placement' => 'top',
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies_banner',
+                'name' => 'vacancies__banner_image',
+                'label' => 'Banner',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 0,
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies-more_pretitle',
+                'name' => 'vacancies__more_pretitle',
+                'label' => 'Pretitle (for Actual Vacancies)',
+                'type' => 'text',
+                'required' => 0,
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies-more_title',
+                'name' => 'vacancies__more_title',
+                'label' => 'Title (for Actual Vacancies)',
+                'type' => 'text',
+                'required' => 0,
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies-more_description',
+                'name' => 'vacancies__more_description',
+                'label' => 'Description (for Actual Vacancies)',
+                'type' => 'wysiwyg',
+                'required' => 0,
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies_form-condition',
+                'label' => 'Enable block with form?',
+                'name' => 'vacancies__form_condition',
+                'type' => 'true_false',
+                'default_value' => 0,
+                'ui' => 1,
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies_form-shortcode',
+                'name' => 'vacancies__form_shortcode',
+                'label' => 'Shortcode',
+                'type' => 'text',
+                'required' => 1,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-vacancies_form-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies_manager-image',
+                'name' => 'vacancies__manager_photo',
+                'label' => 'Manager Photo',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 1,
+                'wrapper' => [
+                    'width' => 33,
+                ],
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-vacancies_form-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies_manager-name',
+                'name' => 'vacancies__manager_name',
+                'label' => 'Manager Name',
+                'type' => 'text',
+                'required' => 1,
+                'wrapper' => [
+                    'width' => 33,
+                ],
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-vacancies_form-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
+            [
+                'key' => 'acf_theme_settings-vacancies_manager-position',
+                'name' => 'vacancies__manager_position',
+                'label' => 'Manager Position',
+                'type' => 'text',
+                'required' => 0,
+                'wrapper' => [
+                    'width' => 33,
+                ],
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'acf_theme_settings-vacancies_form-condition',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+            ],
         ],
         'location' => array(
             array(

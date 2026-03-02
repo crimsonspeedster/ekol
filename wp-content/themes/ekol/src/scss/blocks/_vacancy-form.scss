@@ -1,0 +1,59 @@
+.vacancy-form {
+    box-shadow: 0 0 13px 0 #031E3312;
+    background: #FAFAFA;
+    padding: 24px 16px 16px;
+
+    &__header {
+        display: grid;
+        grid-template-columns: minmax(0, 56px) minmax(0, 1fr);
+        gap: 20px;
+        align-items: center;
+        position: relative;
+        padding-bottom: 16px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 113px;
+            height: 1px;
+            background-color: #06AEEF;
+        }
+    }
+
+    &__image {
+        border-radius: 12px;
+        overflow: hidden;
+        aspect-ratio: 1;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+
+    &__info {
+        font-weight: 500;
+    }
+
+    &__name {
+        color: #181819;
+    }
+
+    &__position {
+        color: #80848D;
+        font-size: 14px;
+    }
+
+    &__title {
+        margin-top: 16px;
+    }
+
+    &__wrapper {
+        margin-top: 24px;
+    }
+}

@@ -32,7 +32,7 @@ if ($form__condition) {
                 </div>
 
                 <div class="part-form__row">
-                    <div class="part-form__left">
+                    <div class="part-form__left hubspot-form ">
                         <?= do_shortcode($form__shortcode); ?>
                     </div>
 

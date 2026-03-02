@@ -79,11 +79,11 @@ add_action('init', function () {
             ),
             'has_archive'         => false,
             'public'              => true,
-            'publicly_queryable'  => false,
+            'publicly_queryable'  => true,
             'exclude_from_search' => true,
             'show_in_menu'        => true,
             'show_in_rest'        => true,
-            'supports'            => array('title'),
+            'supports'            => array('title', 'editor', 'thumbnail', 'excerpt'),
         ],
         'html_blocks' => [
             'label'  => null,
@@ -359,7 +359,44 @@ add_action('wp_head', function () {
 
         echo '<script type="application/ld+json">' . json_encode($blog_posting_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . '</script>';
     }
-    elseif (is_page_template('page_templates/about-us.php')) {
+    elseif (is_singular('vacancies')) {
+        $title = get_the_title();
+        $description = get_the_excerpt();
+        $date_posted = get_the_date('Y-m-d');
+        $valid_through = date('Y-m-d', strtotime('+30 days', strtotime($date_posted)));
+        $is_full_time = get_field('common__full_time');
+        $address_string = get_field('common__location');
+
+        $schema = [
+            "@context" => "https://schema.org",
+            "@type" => "JobPosting",
+            "title" => $title,
+            "description" => wp_strip_all_tags($description),
+            "datePosted" => $date_posted,
+            "validThrough" => $valid_through,
+            "employmentType" => $is_full_time ? "FULL_TIME" : 'PART_TIME',
+            "jobLocation" => [
+                "@type" => "Place",
+                "address" => [
+                    "@type" => "PostalAddress",
+                    "streetAddress" => $address_string,
+                    "addressCountry" => "UA"
+                ],
+            ],
+            "hiringOrganization" => [
+                '@type' => 'Organization',
+                'name' => get_bloginfo('name'),
+                'logo' => [
+                    '@type' => 'ImageObject',
+                    'url' => wp_get_attachment_image_url($common__header_logo, 'full'),
+                ]
+            ],
+        ];
+
+        echo '<script type="application/ld+json">' . json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
+    }
+
+    if (is_page_template('page_templates/about-us.php') || is_singular('vacancies')) {
         $contacts__address = get_field('contacts__address', 'option');
         $contacts__phones = get_field('contacts__phones', 'option');
         $contacts__email = get_field('contacts__email', 'option');
@@ -525,6 +562,19 @@ add_filter('wpseo_breadcrumb_links', function ($links) {
             );
 
             array_splice($links, 1, 0, array($breadcrumb_link));
+        }
+    }
+    elseif (is_singular('vacancies') || is_tax('vacancies_cat')) {
+        $common__archive_vacancies = get_field('common__archive_vacancies', 'options');
+
+        if (is_a($common__archive_vacancies, 'WP_Post')) {
+
+            $archive_link = [
+                'url'  => get_permalink($common__archive_vacancies->ID),
+                'text' => $common__archive_vacancies->post_title,
+            ];
+
+            array_splice($links, 1, 0, [$archive_link]);
         }
     }
 

@@ -1,0 +1,75 @@
+@import "@scss_blocks/vacancy-form";
+@import "@scss_blocks/vacancies-single-part";
+@import "@scss_blocks/preview-post";
+
+.post-vacancies {
+    padding: 32px 0 90px;
+
+    &__banner {
+        margin-bottom: 40px;
+        aspect-ratio: 1308 / 387;
+        overflow: hidden;
+        border-radius: 16px 16px 4px 4px;
+        
+        img {
+            object-position: top center;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+
+    &__wrapper {
+
+        &--row {
+            display: grid;
+            grid-template-columns: minmax(0, 825px) minmax(0, 416px);
+            gap: 40px;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            @media (max-width: 991px) {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    }
+
+    &__info {
+
+    }
+
+    &__pretitle {
+        margin-bottom: 8px;
+    }
+
+    &__title {
+
+    }
+
+    &__address {
+        margin-top: 16px;
+        color: #034E6C;
+        font-size: 18px;
+        line-height: 133%;
+    }
+
+    &__content {
+        margin-top: 16px;
+
+        *:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__form {
+        .form-columns-2 {
+            gap: 16px;
+            flex-direction: column;
+        }
+    }
+}

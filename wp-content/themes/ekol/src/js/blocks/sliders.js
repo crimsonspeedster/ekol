@@ -168,6 +168,50 @@ document.querySelectorAll('.blog-part-slider').forEach(item => {
     });
 });
 
+document.querySelectorAll('.vacancies-single-part-slider').forEach(item => {
+    const parent_el = item.closest('.vacancies-single-part');
+
+    new Swiper(item, {
+        modules: [Scrollbar, Navigation],
+        slidesPerView: 1.089,
+        spaceBetween: 8,
+        autoHeight: true,
+        slidesOffsetBefore: 16,
+        slidesOffsetAfter: 16,
+        scrollbar: {
+            el: parent_el.querySelector('.swiper-scrollbar'),
+            hide: false,
+        },
+        navigation: {
+            nextEl: parent_el.querySelector(".swiper-button-next"),
+            prevEl: parent_el.querySelector(".swiper-button-prev"),
+        },
+        breakpoints: {
+            576: {
+                slidesPerView: 1.7,
+            },
+            768: {
+                slidesPerView: 2.3,
+            },
+            992: {
+                slidesPerView: 2.7,
+            },
+            1024: {
+                slidesOffsetBefore: 60,
+                slidesOffsetAfter: 60,
+                spaceBetween: 16,
+                slidesPerView: 3.1,
+            },
+            1200: {
+                slidesOffsetBefore: 60,
+                slidesOffsetAfter: 60,
+                spaceBetween: 16,
+                slidesPerView: 3.27,
+            }
+        },
+    });
+});
+
 document.querySelectorAll('.part-form-slider').forEach(item => {
     const parent_el = item.closest('.part-form');
 

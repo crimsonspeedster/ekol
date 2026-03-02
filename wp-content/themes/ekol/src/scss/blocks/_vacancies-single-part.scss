@@ -1,0 +1,71 @@
+.vacancies-single-part {
+    padding: 0 0 100px;
+
+    @media (max-width: 1199px) {
+        padding: 0 0 80px;
+    }
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto;
+
+        @media (max-width: 767px) {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    &__pretitle {
+
+    }
+
+    &__title {
+        margin-top: 16px;
+    }
+
+    &__description {
+        margin-top: 12px;
+        font-size: 18px;
+        line-height: 26px;
+
+        @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &-slider {
+        margin-top: 32px;
+
+        @media (max-width: 767px) {
+            margin-top: 24px;
+        }
+
+        &__bottom {
+            display: none;
+            margin-top: 32px;
+
+            @media (max-width: 767px) {
+                display: flex;
+            }
+        }
+    }
+
+    &__slide {
+        //height: 100% !important;
+    }
+
+    &__button {
+        margin: 32px auto 0;
+
+        @media (max-width: 575px) {
+            width: calc(100% - 32px);
+            margin-top: 40px;
+        }
+    }
+}

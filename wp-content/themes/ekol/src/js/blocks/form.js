@@ -81,3 +81,14 @@ if (params.has('form')) {
         }
     }, 1000);
 }
+
+if (document.querySelector('body.single-vacancies')) {
+    setTimeout(function () {
+        const form_request_select = document.querySelector('select[name="form_request_type"]');
+
+        if (form_request_select) {
+            form_request_select.value = 'HR';
+            form_request_select.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    }, 500);
+}

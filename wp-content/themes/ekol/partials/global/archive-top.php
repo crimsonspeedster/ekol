@@ -37,8 +37,6 @@ $active_object_id = get_queried_object_id();
                     </button>
 
                     <input class="archive-top-search__input" name="s" type="search" placeholder="<?= pll__('Пошук'); ?>">
-
-                    <input type="hidden" name="post_type" value="<?= $post_type; ?>">
                 </form>
                 <?php
             }

@@ -7,12 +7,13 @@ if (function_exists('pll_register_string')) {
     pll_register_string('ekol', 'Послуги');
     pll_register_string('ekol', 'Послуга');
     pll_register_string('ekol', 'Кейси');
+    pll_register_string('ekol', 'Подати заявку на вакансію');
     pll_register_string('ekol', 'Кейс');
     pll_register_string('ekol', 'Читати далі');
     pll_register_string('ekol', 'Наші спільні кейси');
     pll_register_string('ekol', 'неповна зайнятість');
     pll_register_string('ekol', 'повна зайнятість');
-    pll_register_string('ekol', 'опубліковано %s1');
+    pll_register_string('ekol', 'опубліковано %s1 р');
     pll_register_string('ekol', 'Читати більше');
     pll_register_string('ekol', 'Читати менше');
     pll_register_string('ekol', 'Вакансії');
@@ -26,6 +27,7 @@ if (function_exists('pll_register_string')) {
     pll_register_string('ekol', 'Категорії');
     pll_register_string('ekol', 'Категорія');
     pll_register_string('ekol', 'Пошук');
+    pll_register_string('ekol', 'Детальніше');
     pll_register_string('ekol', 'Всі');
     pll_register_string('ekol', 'Переглянути всі статті');
     pll_register_string('ekol', 'читайте ще');

@@ -9,12 +9,6 @@ $terms = get_the_terms(get_the_ID(), 'vacancies_cat');
 
 <div class="preview-vacancies preview-vacancies--<?= get_the_ID(); ?>" id="vacancy--<?= get_the_ID(); ?>">
     <div class="preview-vacancies__list">
-        <p class="pretitle preview-vacancies-pretitle">
-            <?=
-                str_replace('%s1', '', pll__('опубліковано %s1'));
-            ?>
-        </p>
-
         <?php
             if ($is_full_time) {
                 ?>
@@ -48,19 +42,23 @@ $terms = get_the_terms(get_the_ID(), 'vacancies_cat');
             }
         ?>
 
-        <div class="content preview-vacancies__content preview-vacancies__content--mini"><?= $common__description_small; ?></div>
-
-        <div class="content preview-vacancies__content preview-vacancies__content--hidden"><?= $common__description_hidden; ?></div>
+        <?php
+            if (has_excerpt()) {
+                ?>
+                <div class="content preview-vacancies__content preview-vacancies__content--mini"><?php the_excerpt(); ?></div>
+                <?php
+            }
+        ?>
     </div>
 
     <div class="preview-vacancies__buttons">
-        <button class="button button--read preview-vacancies__button" data-text-more="<?= pll__('Читати більше'); ?>" data-text-less="<?= pll__('Читати менше'); ?>">
-            <span><?= pll__('Читати більше'); ?></span>
+        <a href="<?php the_permalink(); ?>" class="button button--read preview-vacancies__button">
+            <span><?= pll__('Детальніше'); ?></span>
 
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.7504 18.5004L8.00042 18.5004C7.8015 18.5004 7.61074 18.4214 7.47009 18.2807C7.32943 18.1401 7.25042 17.9493 7.25042 17.7504C7.25042 17.5515 7.32943 17.3607 7.47009 17.2201C7.61074 17.0794 7.8015 17.0004 8.00042 17.0004H15.9401L5.21979 6.28104C5.07906 6.14031 5 5.94944 5 5.75042C5 5.55139 5.07906 5.36052 5.21979 5.21979C5.36052 5.07906 5.55139 5 5.75042 5C5.94944 5 6.14031 5.07906 6.28104 5.21979L17.0004 15.9401V8.00042C17.0004 7.80151 17.0794 7.61074 17.2201 7.47009C17.3607 7.32944 17.5515 7.25042 17.7504 7.25042C17.9493 7.25042 18.1401 7.32944 18.2807 7.47009C18.4214 7.61074 18.5004 7.80151 18.5004 8.00042L18.5004 17.7504C18.5004 17.9493 18.4214 18.1401 18.2807 18.2807C18.1401 18.4214 17.9493 18.5004 17.7504 18.5004Z" fill="#023D54"/>
             </svg>
-        </button>
+        </a>
 
         <a href="#part-form" data-form-select="HR" class="preview-vacancies__link">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

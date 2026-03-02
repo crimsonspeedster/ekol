@@ -13,6 +13,14 @@ if( function_exists('acf_add_local_field_group') ):
                 'placement' => 'top',
             ],
             [
+                'key' => 'type-vacancies_common-banner',
+                'name' => 'common__banner_image',
+                'label' => 'Banner',
+                'type' => 'image',
+                'return_format' => 'id',
+                'required' => 0,
+            ],
+            [
                 'key' => 'type-vacancies_common-full_time',
                 'label' => 'Is full time?',
                 'name' => 'common__full_time',
@@ -26,20 +34,6 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Location',
                 'type' => 'text',
                 'required' => 0,
-            ],
-            [
-                'key' => 'type-vacancies_common-description--small',
-                'name' => 'common__description_small',
-                'label' => 'Description (small)',
-                'type' => 'wysiwyg',
-                'required' => 1,
-            ],
-            [
-                'key' => 'type-vacancies_common-description--hidden',
-                'name' => 'common__description_hidden',
-                'label' => 'Description (hidden)',
-                'type' => 'wysiwyg',
-                'required' => 1,
             ],
         ],
         'location' => array(
