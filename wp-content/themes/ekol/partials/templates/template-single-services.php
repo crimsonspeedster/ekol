@@ -20,6 +20,8 @@ get_header();
         </section>
 
         <?php
+        get_template_part('partials/part-our_solution');
+
         get_template_part('partials/global/part-form');
 
         get_template_part('partials/part-solutions');
