@@ -14,11 +14,6 @@ $timeline__title = get_field('timeline__title');
 $timeline__description = get_field('timeline__description');
 $timeline__repeater = get_field('timeline__repeater');
 
-$our_solution__pretitle = get_field('our_solution__pretitle');
-$our_solution__title = get_field('our_solution__title');
-$our_solution__description = get_field('our_solution__description');
-$our_solution__repeater = get_field('our_solution__repeater');
-
 $remake__pretitle = get_field('remake__pretitle');
 $remake__title = get_field('remake__title');
 $remake__description = get_field('remake__description');
@@ -135,52 +130,7 @@ $reviews__repeater = get_field('reviews__repeater');
         </div>
     </section>
 
-    <section class="our-solution">
-        <div class="container">
-            <p class="pretitle our-solution__pretitle"><?= $our_solution__pretitle; ?></p>
-
-            <h2 class="our-solution__title"><?= $our_solution__title; ?></h2>
-
-            <div class="content our-solution__description"><?= $our_solution__description; ?></div>
-
-            <?php
-                if (!empty($our_solution__repeater)) {
-                    ?>
-                    <div class="our-solution-tabs">
-                        <?php
-                            foreach ($our_solution__repeater as $index => $item)
-                            {
-                                ?>
-                                <div class="h4 our-solution-tab <?= $index === 0 ? 'active' : ''; ?>"><?= $item['tab']; ?></div>
-                                <?php
-                            }
-                        ?>
-                    </div>
-
-                    <div class="our-solution-tabs-content">
-                        <?php
-                            foreach ($our_solution__repeater as $index => $item) {
-                                ?>
-                                <div class="our-solution-tab-content <?= $index === 0 ? 'active' : ''; ?>">
-                                    <div class="our-solution-tab-content__left">
-                                        <h2 class="our-solution-tab-content__title"><?= $item['title']; ?></h2>
-
-                                        <div class="content our-solution-tab-content__description"><?= $item['description']; ?></div>
-                                    </div>
-
-                                    <div class="our-solution-tab-content__right">
-                                        <?= wp_get_attachment_image($item['background_id'], 'full'); ?>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                        ?>
-                    </div>
-                    <?php
-                }
-            ?>
-        </div>
-    </section>
+    <?php get_template_part('partials/part-our_solution'); ?>
 
     <section class="remake">
         <div class="container">
