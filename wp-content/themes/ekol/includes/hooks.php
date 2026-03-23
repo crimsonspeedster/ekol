@@ -1,5 +1,10 @@
 <?php
 // Actions
+add_action('init', function() {
+    if (strpos($_SERVER['REQUEST_URI'], 'wp-comments-post.php') !== false) {
+        wp_die('Comments are closed.');
+    }
+});
 add_action('init', function () {
     if (!function_exists('pll__')) {
         function pll__($text, $domain = 'default') {
@@ -679,3 +684,6 @@ add_filter('wpseo_robots', function ($robots) {
 
     return $robots;
 });
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+add_filter('xmlrpc_enabled', '__return_false');
