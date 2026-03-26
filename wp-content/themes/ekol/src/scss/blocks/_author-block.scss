@@ -1,0 +1,262 @@
+.post-author-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  margin: 20px 0 28px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #E5E9EC;
+  border-left: 3px solid #06AEEF;
+  box-shadow: 0 1px 6px rgba(0, 43, 59, 0.05);
+}
+
+.post-author-row__avatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #E5E9EC;
+  display: block;
+  flex-shrink: 0;
+  transition: opacity .2s;
+}
+.post-author-row__avatar:hover { opacity: .85; }
+.post-author-row__avatar--initials {
+  background: linear-gradient(135deg, #c7f0ff 0%, #004d6e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Futura PT Book', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+}
+.post-author-row__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.post-author-row__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.post-author-row__label {
+  font-family: Calibri, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #9CA3AF;
+}
+.post-author-row__name {
+  width: 100%;
+  font-family: 'Futura PT Book', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #002B3B;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.post-author-row__name:hover {
+  color: #06AEEF;
+  border-bottom-color: #06AEEF;
+}
+.post-author-row__position {
+  font-family: Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #06AEEF;
+}
+.post-author-row__date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  padding-left: 18px;
+  border-left: 1px solid #E5E9EC;
+}
+.post-author-row__date-label {
+  font-family: Calibri, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #9CA3AF;
+}
+.post-author-row__date-value {
+  font-family: 'Futura PT Book', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #002B3B;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.post-author-row__date-value svg { color: #06AEEF; }
+.post-author-row__date-updated {
+  font-family: Calibri, sans-serif;
+  font-size: 11px;
+  color: #9CA3AF;
+}
+
+/* ── 2. AUTHOR CARD (after article content) ──────────────── */
+.post-author-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #F7F9FA;
+  border: 1px solid #E5E9EC;
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.post-author-card * {
+  text-decoration: unset !important;
+}
+
+.post-author-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: #06AEEF;
+  border-radius: 0 0 16px 16px;
+}
+.post-author-card__avatar {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #E5E9EC;
+  display: block;
+  flex-shrink: 0;
+  transition: opacity .2s;
+}
+.post-author-card__avatar:hover { opacity: .85; }
+.post-author-card__avatar--initials {
+  background: linear-gradient(135deg, #c7f0ff 0%, #004d6e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0 !important;
+  font-family: 'Futura PT Book', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+}
+.post-author-card__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.post-author-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.post-author-card__info * {
+  margin-bottom: 0!important;
+}
+.post-author-card__label {
+  font-family: Calibri, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: #9CA3AF;
+  margin: 0;
+}
+.post-author-card__name {
+  font-family: 'Futura PT Book', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #002B3B;
+  text-decoration: none;
+  display: block;
+  transition: color .2s;
+}
+.post-author-card__name:hover { color: #06AEEF; }
+.post-author-card__position {
+  font-family: Calibri, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #06AEEF;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin: 0;
+}
+.post-author-card__bio {
+  font-family: Calibri, sans-serif;
+  font-size: 14px;
+  color: #56575A;
+  line-height: 1.7;
+  margin: 4px 0 0;
+}
+.post-author-card__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #E8F8FD;
+  border: 1px solid #b3e5f8;
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-family: Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #06AEEF;
+  margin-top: 4px;
+  width: fit-content;
+}
+.post-author-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 4px;
+}
+.author-card__link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.post-author-card__categories-list {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+a.post-author-card__categories-item {
+  padding: 4px 12px;
+  border: 1px solid #E5E9EC;
+  border-radius: 99px;
+  background: #fff;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .post-author-row { flex-wrap: wrap; }
+  .post-author-row__date {
+    border-left: none;
+    border-top: 1px solid #E5E9EC;
+    padding: 10px 0 0;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .post-author-card {
+    flex-direction: column;
+    padding: 22px 18px;
+  }
+}

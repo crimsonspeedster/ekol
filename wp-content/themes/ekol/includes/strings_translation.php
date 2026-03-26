@@ -46,4 +46,15 @@ if (function_exists('pll_register_string')) {
     pll_register_string('ekol', 'Сторінка, яку ви шукаєте, не знайдена');
     pll_register_string('ekol', 'Повернутись на головну');
     pll_register_string('ekol', '<p>Будьте в курсі трендів, новітніх технологій та інновацій у сфері логістики</p>');
+    pll_register_string('ekol', 'Статті');
+    pll_register_string('ekol', 'Автор блогу · Ekol Ukraine');
+    pll_register_string('ekol', 'Написати автору');
+    pll_register_string('ekol', 'Статті <span>автора</span>');
+    pll_register_string('ekol', 'Всі статті блогу');
+    pll_register_string('ekol', 'Автор');
+    pll_register_string('ekol', 'Дата публікації');
+    pll_register_string('ekol', 'Оновлено:');
+    pll_register_string('ekol', 'Опубліковано:');
+    pll_register_string('ekol', 'Про автора');
+    pll_register_string('ekol', 'Всі статті автора');
 }

@@ -46,8 +46,14 @@ add_action( 'wp_enqueue_scripts', function () {
         if (file_exists($template_style_path)) {
             wp_enqueue_style( "template-style", $template_style_uri, [], $ver );
         }
-    }
-    elseif (is_singular()) {
+    } elseif ( is_author() ) {
+        wp_enqueue_style(
+            'author-page-style',
+            get_template_directory_uri() . '/dist/css/page_templates/author.css',
+            array(),
+            '1.0.0'
+        );
+    } elseif (is_singular()) {
         $post_type = get_post_type();
 
         $template_style_path = get_template_directory() . "/dist/css/page_templates/single-{$post_type}.css";
