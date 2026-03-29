@@ -96,7 +96,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'type' => 'text',
                         'required' => 1,
                         'wrapper' => [
-                            'width' => 33,
+                            'width' => 15,
                         ],
                     ],
                     [
@@ -106,7 +106,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'type' => 'text',
                         'required' => 1,
                         'wrapper' => [
-                            'width' => 33,
+                            'width' => 15,
                         ],
                     ],
                     [
@@ -116,7 +116,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'type' => 'wysiwyg',
                         'required' => 1,
                         'wrapper' => [
-                            'width' => 50,
+                            'width' => 35,
                         ],
                     ],
                     [
@@ -127,7 +127,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'return_format' => 'array',
                         'required' => 0,
                         'wrapper' => [
-                            'width' => 33,
+                            'width' => 17,
                         ],
                     ],
                     [
@@ -138,7 +138,7 @@ if( function_exists('acf_add_local_field_group') ):
                         'return_format' => 'id',
                         'required' => 1,
                         'wrapper' => [
-                            'width' => 50,
+                            'width' => 17,
                         ],
                     ],
                 ],

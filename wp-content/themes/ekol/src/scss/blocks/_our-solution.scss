@@ -52,6 +52,8 @@
         text-align: center;
         color: #888A8F;
         cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         @media (max-width: 991px) {
             padding: 11px 10px;
