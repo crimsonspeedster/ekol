@@ -266,6 +266,10 @@ $reviews__repeater = get_field('reviews__repeater');
         get_template_part('partials/part-vacancies');
     ?>
 
+    <?php
+    get_template_part('partials/part-certificates');
+    ?>
+
     <section class="reviews background-block" id="reviews">
         <div class="background-block__image">
             <?= wp_get_attachment_image($reviews__bg_id, 'full'); ?>

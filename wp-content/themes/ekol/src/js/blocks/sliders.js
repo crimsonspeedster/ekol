@@ -541,3 +541,37 @@ document.querySelectorAll('.our-team__slider').forEach(item => {
         },
     });
 });
+
+
+// Certificates slider
+document.querySelectorAll('.certificates-part__slider').forEach(item => {
+
+    const paginationEl = item.querySelector('.certificates-part__pagination');
+
+    const swiperCertificates = new Swiper(item, {
+        slidesPerView: 1.2,
+        spaceBetween: 16,
+        pagination: {
+            el: paginationEl,
+            clickable: true,
+        },
+        breakpoints: {
+            480: {
+                slidesPerView: 2.1,
+            },
+            768: {
+                slidesPerView: 2.3,
+            },
+            991: {
+                slidesPerView: 3.5,
+            },
+            1280: {
+                slidesPerView: 4.5,
+            },
+            1440: {
+                slidesPerView: 5,
+            },
+        },
+    });
+
+});

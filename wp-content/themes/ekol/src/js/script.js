@@ -12,5 +12,7 @@ import '@js_blocks/cookie_banner';
 import '@js_blocks/lazy-video';
 import '@js_blocks/form';
 import '@js_blocks/read-more';
+import '@js_blocks/accordions';
+import '@js_blocks/certificates_popup';
 
 // import '@js_blocks/vacancies-item';

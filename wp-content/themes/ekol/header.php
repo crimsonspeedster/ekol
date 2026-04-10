@@ -13,6 +13,8 @@
     $common__header_logo = get_field('common__header_logo', 'option');
     $common__header_logo_light = get_field('common__header_logo_light', 'option');
     $common__header_button = get_field('common__header_button', 'option');
+
+    $contacts__phones = get_field('contacts__phones', 'option');
 ?>
 
 <body <?php body_class(); ?>>
@@ -22,7 +24,7 @@
     <header class="header">
         <div class="container">
             <?php
-                if ($common__header_logo) {
+               if ($common__header_logo) {
                     if (is_front_page()) {
                         ?>
                         <div class="header__logo">
@@ -56,10 +58,34 @@
                     ));
                 }
 
-                if (!empty($common__header_button) || function_exists('pll_the_languages')) {
+                if (!empty($common__header_button) || function_exists('pll_the_languages') || !empty($contacts__phones)) {
                     ?>
                     <div class="header__right">
                         <?php
+                            if (!empty($contacts__phones)) {
+                                $phone_number = $contacts__phones[0]['phone'];
+                                $formatted_phone = preg_replace( '/[^0-9]/', '', $phone_number );
+                                ?>
+                                <a href="<?php echo 'tel:' . $formatted_phone;?>">
+                                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="44" height="44" rx="22" fill="#DAF3FD"/>
+                                        <path d="M23.5254 12C28.198 12 32 15.802 32 20.4746" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M23.5254 15.3898C26.3293 15.3898 28.6101 17.6707 28.6101 20.4746" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M23.5254 18.7796C24.4614 18.7796 25.2203 19.5385 25.2203 20.4746" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.9426 19.065L17.3529 20.6547C18.1475 21.6934 19.0825 22.8004 20.1411 23.8589C21.1991 24.9169 22.3054 25.8516 23.3456 26.6468L24.935 25.0574C25.5969 24.3955 26.6701 24.3955 27.332 25.0574L30.9274 28.6529L29.1297 30.4506L28.5713 31.0091C27.4458 32.1345 25.6977 32.3194 24.3511 31.4708C22.5764 30.3523 20.0683 28.5801 17.7441 26.256C15.42 23.9319 13.6477 21.4236 12.5293 19.6489C11.6806 18.3024 11.8654 16.5542 12.991 15.4288L13.5494 14.8703L15.3471 13.0726L18.9426 16.668C19.6045 17.3299 19.6045 18.4031 18.9426 19.065Z" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                                <?php
+                            }
+
+                            if (!empty($common__header_button)) {
+                                ?>
+                                <a href="<?= $common__header_button['url']; ?>" data-form-select="Commercial offer" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
+                                    <?= $common__header_button['title']; ?>
+                                </a>
+                                <?php
+                            }
+
                             if (function_exists('pll_the_languages')) {
                                 ?>
                                 <div class="header-langs">
@@ -71,20 +97,12 @@
 
                                     <ul class="header-langs__list">
                                         <?php
-                                            pll_the_languages([
+                                        pll_the_languages([
                                                 'echo' => 1,
-                                            ]);
+                                        ]);
                                         ?>
                                     </ul>
                                 </div>
-                                <?php
-                            }
-
-                            if (!empty($common__header_button)) {
-                                ?>
-                                <a href="<?= $common__header_button['url']; ?>" data-form-select="Commercial offer" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
-                                    <?= $common__header_button['title']; ?>
-                                </a>
                                 <?php
                             }
                         ?>
@@ -119,10 +137,34 @@
                             'depth' => 2,
                         ));
 
-                        if (!empty($common__header_button) || function_exists('pll_the_languages')) {
+                        if (!empty($common__header_button) || function_exists('pll_the_languages') || !empty($contacts__phones)) {
                             ?>
                             <div class="header__right">
                                 <?php
+                                    if (!empty($contacts__phones)) {
+                                        $phone_number = $contacts__phones[0]['phone'];
+                                        $formatted_phone = preg_replace( '/[^0-9]/', '', $phone_number );
+                                        ?>
+                                        <a href="<?php echo 'tel:' . $formatted_phone;?>">
+                                            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="44" height="44" rx="22" fill="#DAF3FD"/>
+                                                <path d="M23.5254 12C28.198 12 32 15.802 32 20.4746" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M23.5254 15.3898C26.3293 15.3898 28.6101 17.6707 28.6101 20.4746" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M23.5254 18.7796C24.4614 18.7796 25.2203 19.5385 25.2203 20.4746" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M18.9426 19.065L17.3529 20.6547C18.1475 21.6934 19.0825 22.8004 20.1411 23.8589C21.1991 24.9169 22.3054 25.8516 23.3456 26.6468L24.935 25.0574C25.5969 24.3955 26.6701 24.3955 27.332 25.0574L30.9274 28.6529L29.1297 30.4506L28.5713 31.0091C27.4458 32.1345 25.6977 32.3194 24.3511 31.4708C22.5764 30.3523 20.0683 28.5801 17.7441 26.256C15.42 23.9319 13.6477 21.4236 12.5293 19.6489C11.6806 18.3024 11.8654 16.5542 12.991 15.4288L13.5494 14.8703L15.3471 13.0726L18.9426 16.668C19.6045 17.3299 19.6045 18.4031 18.9426 19.065Z" stroke="#023D54" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                        <?php
+                                    }
+
+                                    if (!empty($common__header_button)) {
+                                        ?>
+                                        <a href="<?= $common__header_button['url']; ?>" data-form-select="Commercial offer" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
+                                            <?= $common__header_button['title']; ?>
+                                        </a>
+                                        <?php
+                                    }
+
                                     if (function_exists('pll_the_languages')) {
                                         ?>
                                         <div class="header-langs">
@@ -134,20 +176,12 @@
 
                                             <ul class="header-langs__list">
                                                 <?php
-                                                    pll_the_languages([
+                                                pll_the_languages([
                                                         'echo' => 1,
-                                                    ]);
+                                                ]);
                                                 ?>
                                             </ul>
                                         </div>
-                                        <?php
-                                    }
-
-                                    if (!empty($common__header_button)) {
-                                        ?>
-                                        <a href="<?= $common__header_button['url']; ?>" data-form-select="Commercial offer" class="button button--primary header-link" <?php getLinkAttrs($common__header_button); ?>>
-                                            <?= $common__header_button['title']; ?>
-                                        </a>
                                         <?php
                                     }
                                 ?>

@@ -453,6 +453,35 @@
             display: flex;
         }
     }
+
+    &__phone {
+        display: flex;
+        align-items: center;
+        width: 32px;
+        min-width: 32px;
+        height: 32px;
+
+
+        * {
+            transition: fill 0.3s ease;
+        }
+
+        &:hover {
+            rect {
+                fill: #06AEEF;
+            }
+            path {
+                fill: #06AEEF;
+                stroke: #FFFFFF;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            width: 44px;
+            min-width: 44px;
+            height: 44px;
+        }
+    }
 }
 
 body.page-template-home {

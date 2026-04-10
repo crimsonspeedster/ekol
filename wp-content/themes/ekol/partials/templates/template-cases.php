@@ -35,6 +35,8 @@ $posts_query = new WP_Query($query_args);
 get_template_part('partials/global/breadcrumbs');
 ?>
 <main>
+    <?php get_template_part('partials/part-partners'); ?>
+
     <section class="cases">
         <?php
             get_template_part('partials/global/car-animation', '', [

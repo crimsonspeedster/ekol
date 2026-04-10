@@ -1,0 +1,232 @@
+body.no-scroll {
+  overflow: hidden;
+}
+
+.certificates-part {
+  padding-block: 0 160px;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-top: 16px;
+    color: #002B3B;
+  }
+
+  &__description {
+    margin-top: 15px;
+    color: #56575A;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  &__slider {
+    margin-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+
+// Preview certificate card
+.preview-certificate {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 20px 20px;
+  background-color: #F5F5F5;
+  border-radius: 16px 16px 4px 4px;
+  box-shadow: 0 0 13px 0 #031E3312;
+
+  &:before {
+    border-radius: 16px 16px 0 0;
+    content: "";
+    height: 12px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(90deg, #06aeef, #a4ece2);
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 15px 8px;
+    border-radius: 12px;
+    background-color: #1763A6;
+
+    &--gold {
+      background-color: #C9960D;
+
+      .preview-certificate__info-icon {
+        background-color: #D0A542;
+      }
+    }
+  }
+
+  &__info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #417AB3;
+  }
+
+  &__info-standard {
+    margin-top: 18px;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 40px;
+    font-family: Futura PT Book, sans-serif;
+  }
+
+  &__info-year {
+    color: #FFFFFF99;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    font-family: Calibri, sans-serif;
+  }
+
+  &__title {
+    margin-top: 16px;
+    color: #002B3B;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555A65;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: Calibri, sans-serif;
+  }
+
+  &__date:before {
+    content: "";
+    display: block;
+    width: 7.5px;
+    height: 7.5px;
+    border-radius: 50%;
+    background-color: #23C47A;
+  }
+
+  &__view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #DAF3FD;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    svg path {
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      background-color: #06AEEF;
+
+      svg path {
+        stroke: #FFFFFF;
+      }
+    }
+  }
+}
+
+
+// Certificate popup
+.certificate-popup {
+  display: none;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background: #80808082;
+
+  &.is-active {
+    display: block;
+    visibility: visible;
+  }
+
+  &__container {
+    position: relative;
+    width: fit-content;
+    max-width: calc(100vw - 80px);
+    max-height: calc(100vh - 140px);
+    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 480px;
+
+    img {
+      max-height: 100%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #DAF3FD;
+    border-radius: 8px;
+    margin-inline: auto 0;
+    margin-bottom: 2px;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    svg path {
+      transition: all .3s ease;
+    }
+
+    @media (min-width: 680px) {
+      top: -50px;
+      right: -60px;
+    }
+
+    &:hover {
+      background-color: #06AEEF;
+
+      svg path {
+        fill: #FFFFFF;
+      }
+    }
+  }
+}

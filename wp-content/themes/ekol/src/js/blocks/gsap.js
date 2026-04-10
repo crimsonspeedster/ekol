@@ -200,3 +200,14 @@ if (timeline_scroll_ell) {
         ease: "none"
     }, 0);
 }
+
+
+// For Partners Slider
+document.addEventListener('DOMContentLoaded', function() {
+    gsap.to('#partnersSlider', {
+        x: "-50%",
+        duration: 50,
+        ease: "none",
+        repeat: -1,
+    });
+})
